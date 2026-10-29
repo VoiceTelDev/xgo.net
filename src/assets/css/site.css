@@ -1,0 +1,49 @@
+:root {
+	--bg: #fff;
+	--fg: #1a1a1a;
+	--muted: #5c5c5c;
+	--link: #0b57d0;
+
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #121212;
+		--fg: #ececec;
+		--muted: #a3a3a3;
+		--link: #8ab4f8;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	padding: 1rem;
+	background: var(--bg);
+	color: var(--fg);
+	font-family: system-ui, sans-serif;
+	text-align: center;
+}
+
+h1 {
+	margin: 0 0 0.5rem;
+	font-size: clamp(2.5rem, 8vw, 4.5rem);
+	letter-spacing: -0.02em;
+}
+
+.lede {
+	margin: 0;
+	color: var(--muted);
+	font-size: 1.25rem;
+}
+
+a {
+	color: var(--link);
+}

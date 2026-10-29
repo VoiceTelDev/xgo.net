@@ -1,0 +1,35 @@
+{
+	"name": "xgo-net",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Placeholder site for xgo.net — built with Eleventy v3 + Nunjucks + vanilla CSS.",
+	"type": "module",
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"build": "eleventy",
+		"serve": "eleventy --serve --port=8080",
+		"clean": "rm -rf _site",
+		"format": "prettier --write --ignore-unknown \"{src,tests,tools}/**\" \"*.{js,json}\" \".*.json\" README.md",
+		"format:check": "prettier --check --ignore-unknown \"{src,tests,tools}/**\" \"*.{js,json}\" \".*.json\" README.md",
+		"lint": "npm run lint:js && npm run lint:css",
+		"lint:js": "eslint .",
+		"lint:css": "stylelint 'src/assets/css/**/*.css'",
+		"lint:html": "node tools/lint-html.mjs",
+		"test": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"quality": "npm run format && npm run lint && npm run build && npm run lint:html && npm run test:coverage"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^3.1.7",
+		"@vitest/coverage-v8": "^4.1.12",
+		"eslint": "^9.39.5",
+		"globals": "^15.15.0",
+		"html-validate": "^11.0.0",
+		"prettier": "^3.9.10",
+		"stylelint": "^17.16.0",
+		"stylelint-config-standard": "^40.0.0",
+		"vitest": "^4.1.12"
+	}
+}

@@ -1,0 +1,17 @@
+# Build output
+/_site/
+/coverage/
+
+# Node
+/node_modules/
+npm-debug.log*
+.npm/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editor swap and backup files
+*.swp
+*.swo
+*~
