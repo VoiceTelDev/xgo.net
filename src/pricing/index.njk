@@ -1,0 +1,120 @@
+---
+layout: layouts/base.njk
+title: "Pricing"
+description: "Usage-based pricing for xGO phone intelligence lookups: Phone Enrichment, Caller Name, Carrier, and LRN, with volume pricing for bulk enrichment workloads."
+---
+{%- from "partials/macros.njk" import arrow, dot, chip %}
+
+<section class="page-hero page-hero--short" aria-labelledby="page-title">
+	<div class="wrap pair pair--end">
+		<div class="pair__copy pair__copy--main">
+			<p class="label">Pricing</p>
+			<h1 id="page-title" class="h1 h1--xl">Straightforward pricing for phone intelligence.</h1>
+		</div>
+		<div class="pair__aside">
+			<p class="lede lede--ink">Choose the data you need and pay based on usage.</p>
+			<p class="text">Start with individual lookups or contact us about volume pricing for larger enrichment workloads.</p>
+			<div class="actions mt-xs">
+				<a class="btn btn--ink" href="/contact/">Get API Access</a>
+				<a class="btn btn--line" href="/contact/">Request Volume Pricing</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--cta" aria-labelledby="rates-title">
+	<div class="wrap">
+		<h2 id="rates-title" class="label label--title">Rates per lookup</h2>
+		<div class="rates mt-sm">
+			<div class="rate">
+				<div class="rate__main">
+					<p class="rate__name">{{ dot("dot--9") }}<a class="rate__link" href="/products/phone-enrichment/">Phone Enrichment</a></p>
+					<p class="rate__desc">Caller name, carrier, and routing intelligence in one lookup.</p>
+				</div>
+				<p class="rate__code">caller_name · carrier · routing</p>
+				<p class="rate__price"><span class="placeholder rate__amount">[RATE]</span><span class="rate__unit">/ lookup</span></p>
+			</div>
+			{%- for key in ["cnam", "carrier", "lrn"] %}
+			<div class="rate">
+				<div class="rate__main">
+					<p class="rate__name rate__name--indent"><a class="rate__link" href="{{ products[key].url }}">{{ products[key].name }}</a></p>
+					<p class="rate__desc">{{ products[key].short }}</p>
+				</div>
+				<p class="rate__code">{{ products[key].code }}</p>
+				<p class="rate__price"><span class="placeholder rate__amount">[RATE]</span><span class="rate__unit">/ lookup</span></p>
+			</div>
+			{%- endfor %}
+			<div class="rate rate--tint">
+				<div class="rate__main">
+					<p class="rate__name rate__name--indent"><a class="rate__link" href="/products/bulk-enrichment/">Bulk Phone Enrichment</a></p>
+					<p class="rate__desc">Apply xGO phone intelligence to larger datasets.</p>
+				</div>
+				<p class="rate__code">volume</p>
+				<p class="rate__price"><a class="link-arrow" href="/contact/">Custom volume pricing{{ arrow() }}</a></p>
+			</div>
+			<div class="rate rate--tint">
+				<div class="rate__main">
+					<p class="rate__name rate__name--indent"><a class="rate__link" href="/products/ghostverify/">GhostVerify</a>{{ chip("Coming soon", "chip--sm", true) }}</p>
+					<p class="rate__desc">Silent verification and SIM change intelligence.</p>
+				</div>
+				<p class="rate__code">early access</p>
+				<p class="rate__price"><a class="link-arrow" href="/products/ghostverify/">Join Early Access{{ arrow() }}</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="vol-title">
+	<div class="wrap pair">
+		<div class="pair__copy stack--md">
+			<p class="label">Volume</p>
+			<h2 id="vol-title" class="h2">Need more volume?</h2>
+			<p class="text-md measure-sm">We work with data platforms and enterprises that require recurring access to phone intelligence.</p>
+			<p class="text-md measure-sm">Contact us to discuss your expected volume, required fields, and integration requirements.</p>
+			<div class="mt-xs"><a class="btn btn--ink" href="/contact/">Request Volume Pricing</a></div>
+		</div>
+		<div class="pair__visual card">
+			<p class="label">We'll talk through</p>
+			<ul class="checklist">
+				<li class="checklist__item">{{ dot("dot--ink") }}Expected volume</li>
+				<li class="checklist__item">{{ dot("dot--ink") }}Required fields</li>
+				<li class="checklist__item">{{ dot("dot--ink") }}Integration requirements</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="faq-title">
+	<div class="wrap split">
+		<p class="label split__label">Pricing FAQ</p>
+		<div class="split__body">
+			<h2 id="faq-title" class="h2">Questions about pricing.</h2>
+			<dl class="faq">
+				<div class="faq__item">
+					<dt class="faq__q">Is there a monthly minimum?</dt>
+					<dd class="faq__a">Minimums, if any, are set by your commercial plan. Contact us and we'll walk through the options.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Can I purchase individual products?</dt>
+					<dd class="faq__a">Yes. Every lookup product is available on its own, and Phone Enrichment combines them in one call.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Do you offer enterprise pricing?</dt>
+					<dd class="faq__a">Yes. Contact us to discuss volume and integration requirements.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Are unsuccessful lookups billed?</dt>
+					<dd class="faq__a">How lookups that return no data are billed is defined in the product terms for your plan.</dd>
+				</div>
+			</dl>
+		</div>
+	</div>
+</section>
+
+{%- set cta = {
+	title: "Put better phone intelligence to work.",
+	text: "Choose the data you need and pay based on usage.",
+	primary: { label: "Get API Access", href: "/contact/" },
+	secondary: { label: "Request Volume Pricing", href: "/contact/" }
+} %}
+{%- include "partials/cta-card.njk" %}

@@ -1,0 +1,144 @@
+---
+layout: layouts/base.njk
+title: "Contact"
+description: "Request API access, discuss volume pricing, or explore a data partnership with xGO. Tell us what you're working on and we'll help you find the right way to use phone intelligence."
+---
+{%- from "partials/macros.njk" import arrow, chevron %}
+
+<section class="page-hero page-hero--short" aria-labelledby="page-title">
+	<div class="wrap pair pair--end">
+		<div class="pair__copy pair__copy--main">
+			<p class="label">Contact <span class="brand">xGO</span></p>
+			<h1 id="page-title" class="h1 h1--xl">Let's talk about your phone data.</h1>
+		</div>
+		<div class="pair__aside">
+			<p class="lede lede--ink">Have a question about our APIs, need pricing for a large dataset, or want to explore a partnership?</p>
+			<p class="text">Tell us what you're working on. We'll help you find the right way to use xGO.</p>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--tight" aria-labelledby="options-title">
+	<div class="wrap">
+		<h2 id="options-title" class="label label--title">Contact options</h2>
+		<div class="grid grid--270 mt-sm">
+			<div class="card card--plain">
+				<h3 class="card__title card__title--option">API Access</h3>
+				<p class="card__question">Looking to integrate phone intelligence into your application?</p>
+				<p class="card__text card__text--sm">Tell us which data products you're interested in and how you plan to use them.</p>
+				<div class="card__foot"><a class="link-arrow" href="#form">Request API Access{{ arrow() }}</a></div>
+			</div>
+			<div class="card card--plain">
+				<h3 class="card__title card__title--option">Enterprise &amp; Volume Pricing</h3>
+				<p class="card__question">Working with large datasets or recurring enrichment workloads?</p>
+				<p class="card__text card__text--sm">Contact us to discuss volume requirements, product selection, and commercial options.</p>
+				<div class="card__foot"><a class="link-arrow" href="#form">Discuss Pricing{{ arrow() }}</a></div>
+			</div>
+			<div class="card card--plain">
+				<h3 class="card__title card__title--option">Data Partnerships</h3>
+				<p class="card__question">Interested in adding xGO intelligence to your enrichment platform or data product?</p>
+				<p class="card__text card__text--sm">Let's explore how we can work together.</p>
+				<div class="card__foot"><a class="link-arrow" href="#form">Become a Partner{{ arrow() }}</a></div>
+			</div>
+			<div class="card card--plain card--dashed">
+				<h3 class="card__title card__title--option">GhostVerify Early Access</h3>
+				<p class="card__question">Building an authentication or fraud prevention workflow?</p>
+				<p class="card__text card__text--sm">Register your interest in GhostVerify Silent, SIM, or Complete.</p>
+				<div class="card__foot"><a class="link-arrow" href="/products/ghostverify/#early-access">Join Early Access{{ arrow() }}</a></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="form" class="section section--line section--mist" aria-labelledby="form-title">
+	<div class="wrap pair pair--top pair--form">
+		<div class="pair__copy pair__copy--narrow">
+			<p class="label">Contact form</p>
+			<h2 id="form-title" class="h2">Tell us what you need.</h2>
+		</div>
+		<div class="form-card" data-form-box>
+			<form class="form" method="post" action="{{ site.forms.contact or '#form' }}" data-form data-endpoint="{{ site.forms.contact }}" novalidate>
+				<div class="field">
+					<label class="field__label" for="c-first">First name</label>
+					<input class="input" id="c-first" name="first_name" type="text" autocomplete="given-name" required>
+				</div>
+				<div class="field">
+					<label class="field__label" for="c-last">Last name</label>
+					<input class="input" id="c-last" name="last_name" type="text" autocomplete="family-name" required>
+				</div>
+				<div class="field">
+					<label class="field__label" for="c-email">Work email</label>
+					<input class="input" id="c-email" name="email" type="email" autocomplete="email" required>
+				</div>
+				<div class="field">
+					<label class="field__label" for="c-company">Company</label>
+					<input class="input" id="c-company" name="company" type="text" autocomplete="organization" required>
+				</div>
+				<div class="field field--full">
+					<label class="field__label" for="c-site">Website <span class="optional">(optional)</span></label>
+					<input class="input" id="c-site" name="website" type="url" autocomplete="url" placeholder="https://">
+				</div>
+				<div class="field">
+					<label class="field__label" for="c-interest">What are you interested in?</label>
+					<div class="select-wrap">
+						<select class="input" id="c-interest" name="interest" required>
+							<option value="">Select a product</option>
+							<option>Phone Enrichment</option>
+							<option>Caller Name Lookup</option>
+							<option>Carrier Lookup</option>
+							<option>LRN Lookup</option>
+							<option>Bulk Enrichment</option>
+							<option>GhostVerify</option>
+							<option>Data Partnership</option>
+							<option>Other</option>
+						</select>
+						{{ chevron() }}
+					</div>
+				</div>
+				<div class="field">
+					<label class="field__label" for="c-volume">Estimated monthly lookup volume</label>
+					<div class="select-wrap">
+						<select class="input" id="c-volume" name="volume">
+							<option value="">Select a range</option>
+							<option>Fewer than 10,000</option>
+							<option>10,000–100,000</option>
+							<option>100,000–1 million</option>
+							<option>More than 1 million</option>
+							<option>Not sure yet</option>
+						</select>
+						{{ chevron() }}
+					</div>
+				</div>
+				<div class="field field--full">
+					<label class="field__label" for="c-msg">How can we help?</label>
+					<textarea class="input" id="c-msg" name="message" rows="5" required></textarea>
+				</div>
+				<p class="form__error" data-form-error role="alert" tabindex="-1" hidden></p>
+				<div class="form__actions">
+					<button class="btn btn--ink" type="submit">Send Message</button>
+					<p class="form__note">We use what you share here only to respond to your request.</p>
+				</div>
+			</form>
+			<div class="form-sent" data-sent-view role="status" tabindex="-1" hidden>
+				{%- set symbolWidth = 48 %}
+				{%- include "partials/symbol.njk" %}
+				<p class="form-sent__title">Thanks for reaching out.</p>
+				<p class="text measure-sm">We've received your message and will follow up using the contact information you provided.</p>
+				<div class="mt-xs"><button class="btn btn--line" type="button" data-action="reset">Send another message</button></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="explore-title">
+	<div class="wrap closing">
+		<div class="closing__copy">
+			<h2 id="explore-title" class="h2 h2--sm">Prefer to explore first?</h2>
+			<p class="text-md measure-sm">Browse our products and documentation to learn more about what xGO offers.</p>
+		</div>
+		<div class="actions">
+			<a class="btn btn--ink" href="/products/">View Products</a>
+			<a class="btn btn--line" href="/developers/">Explore Documentation</a>
+		</div>
+	</div>
+</section>

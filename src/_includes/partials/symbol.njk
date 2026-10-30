@@ -1,0 +1,5 @@
+{#- The x symbol alone (the crosspoint). `symbolWidth` in px; `symbolClass` adds modifiers. -#}
+{%- set w = symbolWidth or 44 -%}
+<svg class="symbol{% if symbolClass %} {{ symbolClass }}{% endif %}" width="{{ w }}" height="{{ (w * 510 / 680) | round(1) }}" viewBox="0 -510 680 510" aria-hidden="true">
+	<path class="symbol__x" fill-rule="evenodd" d="M0 0L169.7 0L340 -170.2L510.3 0L680 0L424.9 -255L680 -510L510.3 -510L340 -339.8L169.7 -510L0 -510L255.1 -255Z M340 -339.8L424.9 -255L340 -170.2L255.1 -255Z"/>
+</svg>

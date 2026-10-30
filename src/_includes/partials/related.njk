@@ -1,0 +1,17 @@
+{#- Related products. Set `related` = ["enrich", "carrier"] (keys of products.json); optional `relatedTitle`. -#}
+{%- from "partials/macros.njk" import arrow %}
+<section class="section section--line section--tight" aria-labelledby="related-title">
+	<div class="wrap">
+		<h2 id="related-title" class="label label--title">{{ relatedTitle or "Related products" }}</h2>
+		<div class="grid related">
+			{%- for key in related %}
+			{%- set item = products[key] %}
+			<a class="related__card" href="{{ item.url }}">
+				<span class="related__code">{{ item.code }}</span>
+				<span class="related__title">{{ item.name }}{{ arrow() }}</span>
+				<span class="related__text">{{ item.tagline }}</span>
+			</a>
+			{%- endfor %}
+		</div>
+	</div>
+</section>

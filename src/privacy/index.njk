@@ -1,0 +1,72 @@
+---
+layout: layouts/base.njk
+title: "Privacy Policy"
+description: "How xGO collects, uses, and protects personal information through the xgo.net website and the xGO phone intelligence APIs."
+noindex: true
+---
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Company" }] %}
+		{%- set crumbCurrent = "Privacy Policy" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="page-hero__grid stack stack--lg">
+			<p class="label label--ink">Privacy Policy</p>
+			<h1 id="page-title" class="h1 h1--xl">Privacy Policy.</h1>
+			<p class="caption">Last updated: {{ build.year }}</p>
+			{%- include "partials/legal-notice.njk" %}
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-label="Privacy Policy">
+	<div class="wrap">
+		<div class="prose">
+			<h2>1. Who we are</h2>
+			<p>This Privacy Policy explains how {{ site.legalName }} ("xGO", "we", "us") collects, uses, and shares personal information when you visit {{ site.domain }} (the "website") or use the xGO application programming interfaces and data products (the "Services").</p>
+
+			<h2>2. Information we collect</h2>
+			<h3>Information you give us</h3>
+			<p>When you contact us, request API access, or join an early-access list, we collect the details you provide, such as your name, work email address, company, website, country, the products you are interested in, expected volumes, and your message.</p>
+			<h3>Information processed through the Services</h3>
+			<p>Customers submit telephone numbers to the Services and receive caller-name, carrier-related, and routing information where available. We process submitted numbers and the responses on behalf of the customer to deliver the Services, and we keep request logs for security, billing, support, and service improvement.</p>
+			<h3>Information collected automatically</h3>
+			<p>When you use the website or the Services we receive technical information such as IP address, browser or client type, timestamps, and the pages or endpoints requested. The website does not use advertising trackers.</p>
+
+			<h2>3. How we use information</h2>
+			<ul>
+				<li>to provide, operate, secure, and support the website and the Services;</li>
+				<li>to respond to inquiries and manage customer relationships;</li>
+				<li>to bill for usage and enforce our terms;</li>
+				<li>to monitor performance, prevent abuse and fraud, and improve the Services; and</li>
+				<li>to comply with legal obligations.</li>
+			</ul>
+
+			<h2>4. How we share information</h2>
+			<p>We share personal information only with service providers that help us operate the website and the Services (such as hosting, email, and analytics providers) under contracts that restrict their use of the data, with data sources to the extent needed to fulfil a lookup, when required by law or to protect rights and safety, and in connection with a merger, acquisition, or sale of assets. We do not sell personal information.</p>
+
+			<h2>5. Customer responsibilities</h2>
+			<p>Customers are responsible for having a lawful basis to submit telephone numbers to the Services and to use the information returned, and for providing any notices required to the people those numbers belong to. Caller-name information does not establish identity or ownership and should be used as context alongside other data.</p>
+
+			<h2>6. Retention</h2>
+			<p>We keep contact and account information for as long as needed to manage the relationship and meet legal and accounting obligations. Request logs are retained for a limited period for security, billing, and support purposes and are then deleted or aggregated.</p>
+
+			<h2>7. Security</h2>
+			<p>We use administrative, technical, and physical safeguards appropriate to the sensitivity of the information we hold, including encrypted transport, access controls, and credential-based API authentication. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+
+			<h2>8. Your rights</h2>
+			<p>Depending on where you live, you may have rights to access, correct, delete, or restrict the processing of your personal information, to object to processing, or to data portability. To exercise these rights, contact us through our <a href="/contact/">contact page</a>. If we process your information on behalf of a customer, we may refer your request to that customer.</p>
+
+			<h2>9. International transfers</h2>
+			<p>We operate from the United States. If you access the website or the Services from elsewhere, your information may be transferred to and processed in the United States and other countries with different data-protection laws.</p>
+
+			<h2>10. Children</h2>
+			<p>The website and the Services are intended for businesses and are not directed at children under 16. We do not knowingly collect personal information from children.</p>
+
+			<h2>11. Changes</h2>
+			<p>We may update this Privacy Policy from time to time. We will post the updated policy on this page and update the date above.</p>
+
+			<h2>12. Contact</h2>
+			<p>Questions or requests about this Privacy Policy can be sent through our <a href="/contact/">contact page</a>.</p>
+		</div>
+	</div>
+</section>

@@ -21,4 +21,21 @@ export default [
 			eqeqeq: ["error", "always"],
 		},
 	},
+	{
+		files: ["src/assets/js/**/*.js"],
+		languageOptions: {
+			ecmaVersion: 2024,
+			sourceType: "script",
+			globals: {
+				...globals.browser,
+			},
+		},
+		rules: {
+			"no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+			"no-undef": "error",
+			"no-var": "error",
+			"prefer-const": "error",
+			eqeqeq: ["error", "always"],
+		},
+	},
 ];

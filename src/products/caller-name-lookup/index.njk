@@ -1,0 +1,163 @@
+---
+layout: layouts/base.njk
+title: "Caller Name Lookup API"
+description: "Retrieve the available caller ID name for a North American phone number. Enrich contact records, investigate unknown callers, and compare caller-name data with your CRM."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Products", href: "/products/" }] %}
+		{%- set crumbCurrent = "Caller Name Lookup" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair page-hero__grid">
+			<div class="pair__copy pair__copy--wide">
+				<p class="label label--ink label--dot">{{ dot() }}Caller Name Lookup API</p>
+				<h1 id="page-title" class="h1">Find the name on the caller ID record.</h1>
+				<p class="text">Retrieve available caller ID names for existing phone numbers. Add context to contact records, investigate unknown callers, and compare caller-name information with your CRM data.</p>
+				<div class="actions actions--mt">
+					<a class="btn btn--ink" href="/contact/">Get API Access</a>
+					<a class="btn btn--line" href="/developers/">View Documentation</a>
+				</div>
+			</div>
+			<figure class="pair__visual">
+				<div class="panel">
+					<div class="panel__head">
+						<p class="panel__title">Caller Name Lookup</p>
+						<p class="label">Illustrative</p>
+					</div>
+					<div class="panel__body">
+						<div class="trace trace--input">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<p class="label">Input</p>
+								<p class="trace__input trace__input--sm">+1 212 555 0123</p>
+							</div>
+						</div>
+						<div class="trace">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<div class="trace__field">
+									<p class="trace__name">Caller ID name</p>
+									<p class="trace__key">caller_name.value</p>
+								</div>
+								<p class="trace__value trace__value--lg">EXAMPLE BUSINESS</p>
+							</div>
+						</div>
+						<div class="trace trace--last">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<div class="trace__field">
+									<p class="trace__name">Available</p>
+									<p class="trace__key">caller_name.available</p>
+								</div>
+								<p class="trace__value trace__value--accent">true</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<figcaption class="caption">Illustrative response. Caller-name availability varies by number and source coverage.</figcaption>
+			</figure>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="does-title">
+	<div class="wrap split">
+		<p class="label split__label">What it does</p>
+		<div class="split__body">
+			<h2 id="does-title" class="h2">The CNAM record, made accessible.</h2>
+			<div class="grid grid--250 grid--gap-md mt-md">
+				<p class="text-md">Caller Name Lookup retrieves the available CNAM record associated with a North American telephone number.</p>
+				<p class="text-md">CNAM is commonly used to display caller names in telephone systems. xGO makes this information accessible for enrichment and data analysis.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="use-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">What you can do</p>
+			<h2 id="use-title" class="h2 split__body">Put caller-name data to work.</h2>
+		</div>
+		<div class="grid mt-lg">
+			<div class="card">
+				<p class="card__num">01</p>
+				<h3 class="card__title">Enrich incomplete records</h3>
+				<p class="card__text">Add an available caller ID name when your existing contact record contains only a phone number.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">02</p>
+				<h3 class="card__title">Investigate unknown numbers</h3>
+				<p class="card__text">Retrieve caller-name information to provide additional context during contact research.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">03</p>
+				<h3 class="card__title">Review potential mismatches</h3>
+				<p class="card__text">Compare a caller ID name with the name already stored in your CRM.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">04</p>
+				<h3 class="card__title">Support caller identification</h3>
+				<p class="card__text">Display available caller-name information in customer-facing or internal applications.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="get-title">
+	<div class="wrap split">
+		<p class="label split__label">Data returned</p>
+		<div class="split__body">
+			<h2 id="get-title" class="h2">What you get back.</h2>
+			<ul class="returns">
+				<li class="returns__item">{{ dot("dot--9") }}Submitted phone number</li>
+				<li class="returns__item">{{ dot("dot--9") }}Available caller ID name</li>
+				<li class="returns__item">{{ dot("dot--9") }}Lookup status</li>
+			</ul>
+			<div class="callout">
+				{{ dot("dot--11 dot--hollow") }}
+				<div class="callout__body">
+					<p class="label label--ink">Important distinction</p>
+					<p class="callout__lead">Caller ID name is not verified ownership.</p>
+					<p class="callout__text">A CNAM record may contain a person, business, abbreviation, or other registered display name. Records can be incomplete or outdated.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="faq-title">
+	<div class="wrap split">
+		<p class="label split__label">FAQ</p>
+		<div class="split__body">
+			<h2 id="faq-title" class="h2">Common questions.</h2>
+			<dl class="faq">
+				<div class="faq__item">
+					<dt class="faq__q">Does this return the legal owner of the number?</dt>
+					<dd class="faq__a">No. It returns available caller ID name information, not a verified subscriber identity.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Does it work for every number?</dt>
+					<dd class="faq__a">No. Caller-name availability varies by number and source coverage.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Can I use it in Clay or another enrichment platform?</dt>
+					<dd class="faq__a">The API is suitable for enrichment workflows. Specific marketplace integrations will be announced when available.</dd>
+				</div>
+			</dl>
+		</div>
+	</div>
+</section>
+
+{%- set related = ["enrich", "carrier", "lrn"] %}
+{%- include "partials/related.njk" %}
+
+{%- set cta = {
+	title: "Add names to the numbers you already have.",
+	text: "Get started with xGO Caller Name Lookup.",
+	primary: { label: "Get API Access", href: "/contact/" },
+	secondary: { label: "View Documentation", href: "/developers/" }
+} %}
+{%- include "partials/cta-card.njk" %}

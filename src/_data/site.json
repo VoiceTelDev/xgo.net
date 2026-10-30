@@ -1,6 +1,63 @@
 {
-	"brand": "xgo.net",
+	"brand": "xGO",
+	"legalName": "xGO",
+	"domain": "xgo.net",
 	"lang": "en",
 	"url": "https://xgo.net",
-	"description": "xgo.net is coming soon."
+	"tagline": "Know more from every number.",
+	"description": "Phone intelligence APIs that enrich existing phone numbers with caller names, carrier details, and routing intelligence.",
+	"nav": [
+		{ "label": "Products", "href": "/products/" },
+		{ "label": "Solutions", "href": "/solutions/" },
+		{ "label": "Developers", "href": "/developers/" },
+		{ "label": "Pricing", "href": "/pricing/" },
+		{ "label": "About", "href": "/about/" },
+		{ "label": "Contact", "href": "/contact/" }
+	],
+	"navCta": { "label": "Get API Access", "href": "/contact/" },
+	"footer": [
+		{
+			"title": "Products",
+			"links": [
+				{ "label": "Phone Enrichment", "href": "/products/phone-enrichment/" },
+				{ "label": "Caller Name Lookup", "href": "/products/caller-name-lookup/" },
+				{ "label": "Carrier Lookup", "href": "/products/carrier-lookup/" },
+				{ "label": "LRN Lookup", "href": "/products/lrn-lookup/" },
+				{ "label": "Bulk Phone Enrichment", "href": "/products/bulk-enrichment/" },
+				{ "label": "GhostVerify", "href": "/products/ghostverify/" }
+			]
+		},
+		{
+			"title": "Solutions",
+			"links": [
+				{ "label": "Sales & CRM Enrichment", "href": "/solutions/sales-crm-enrichment/" },
+				{ "label": "Data Providers", "href": "/solutions/data-providers/" },
+				{ "label": "Fraud Prevention", "href": "/solutions/#fraud-prevention" },
+				{ "label": "Developers", "href": "/developers/" }
+			]
+		},
+		{
+			"title": "Resources",
+			"links": [
+				{ "label": "Documentation", "href": "/developers/" },
+				{ "label": "Pricing", "href": "/pricing/" },
+				{ "label": "FAQ", "href": "/faq/" },
+				{ "label": "Data Coverage", "href": "/coverage/" }
+			]
+		},
+		{
+			"title": "Company",
+			"links": [
+				{ "label": "About", "href": "/about/" },
+				{ "label": "Contact", "href": "/contact/" },
+				{ "label": "Security & Privacy", "href": "/security/" },
+				{ "label": "Terms of Service", "href": "/terms/" },
+				{ "label": "Privacy Policy", "href": "/privacy/" }
+			]
+		}
+	],
+	"forms": {
+		"contact": "",
+		"earlyAccess": ""
+	}
 }

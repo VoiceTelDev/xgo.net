@@ -1,0 +1,30 @@
+<footer class="site-footer">
+	<div class="wrap site-footer__inner">
+		<div class="site-footer__top">
+			<div class="site-footer__brand">
+				<a class="site-footer__home" href="/" aria-label="{{ site.brand }} home">
+					{%- set logoWidth = 82 %}
+					{%- include "partials/logo.njk" %}
+				</a>
+				<p class="site-footer__tag">Know More From Every Number.</p>
+				<p class="site-footer__blurb">Phone intelligence and verification APIs for modern data workflows.</p>
+			</div>
+			<div class="site-footer__cols">
+				{%- for col in site.footer %}
+				<div>
+					<p class="label site-footer__title">{{ col.title }}</p>
+					<ul class="site-footer__list">
+						{%- for link in col.links %}
+						<li><a class="site-footer__link" href="{{ link.href }}">{{ link.label }}</a></li>
+						{%- endfor %}
+					</ul>
+				</div>
+				{%- endfor %}
+			</div>
+		</div>
+		<div class="site-footer__bottom">
+			<p>© {{ build.year }} {{ site.legalName }}. All rights reserved.</p>
+			<p class="mono site-footer__domain">{{ site.domain }}</p>
+		</div>
+	</div>
+</footer>

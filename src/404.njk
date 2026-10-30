@@ -3,9 +3,19 @@ layout: layouts/base.njk
 permalink: /404.html
 title: "Page not found"
 description: "The page you requested could not be found."
+noindex: true
 eleventyExcludeFromCollections: true
 ---
+{%- from "partials/macros.njk" import arrow %}
 
-<h1>Page not found</h1>
-<p class="lede">The page you requested doesn't exist on {{ site.brand }}.</p>
-<p><a href="/">Back to home</a></p>
+<section class="error-page" aria-labelledby="page-title">
+	<div class="wrap">
+		<p class="label label--ink">404</p>
+		<h1 id="page-title" class="h1 h1--xl mt-md">Page not found.</h1>
+		<p class="lede measure mt-md">The page you requested doesn't exist on {{ site.domain }}. It may have moved, or the address may have been mistyped.</p>
+		<div class="actions mt-md">
+			<a class="btn btn--ink" href="/">Back to home{{ arrow() }}</a>
+			<a class="btn btn--line" href="/products/">Explore Products</a>
+		</div>
+	</div>
+</section>

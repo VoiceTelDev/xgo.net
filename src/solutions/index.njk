@@ -1,0 +1,97 @@
+---
+layout: layouts/base.njk
+title: "Solutions"
+description: "Phone intelligence for sales and CRM enrichment, data providers and enrichment platforms, fraud and risk teams, and developer applications."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="page-hero" aria-labelledby="page-title">
+	<div class="wrap pair">
+		<div class="pair__copy pair__copy--main">
+			<p class="label">Solutions</p>
+			<h1 id="page-title" class="h1 h1--xl">Better phone data for the workflows that depend on it.</h1>
+			<p class="lede measure">From enriching CRM records to investigating suspicious account activity, xGO helps businesses put phone intelligence to work.</p>
+			<div class="actions">
+				<a class="btn btn--ink" href="/products/">Explore Products</a>
+				<a class="btn btn--line" href="/contact/">Contact Sales</a>
+			</div>
+		</div>
+		<figure class="pair__visual art hide-sm" aria-hidden="true">
+			<div class="flow">
+				<div class="flow__input"><span class="dot dot--14"></span>+1 212 555 0123</div>
+				<svg class="flow__lines" viewBox="0 0 72 272"><path d="M0 136.5H36M36.5 28V245M36 28.5H72M36 100.5H72M36 172.5H72M36 244.5H72"/></svg>
+				<div class="flow__outputs">
+					<span class="flow__box"><span class="dot dot--ink"></span>CRM records</span>
+					<span class="flow__box"><span class="dot dot--ink"></span>Enrichment products</span>
+					<span class="flow__box"><span class="dot dot--ink"></span>Risk workflows</span>
+					<span class="flow__box"><span class="dot dot--ink"></span>Applications</span>
+				</div>
+			</div>
+		</figure>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="sol-title">
+	<div class="wrap">
+		<h2 id="sol-title" class="label label--title">Solutions by team</h2>
+		<div class="grid grid--480 mt-md">
+			<a class="sol-card" href="/solutions/sales-crm-enrichment/">
+				<p class="card__num">01</p>
+				<h3 class="sol-card__title">Sales &amp; CRM Enrichment</h3>
+				<p class="sol-card__text">Add caller-name and carrier information to existing contact records.</p>
+				<div class="sol-card__foot">
+					<span class="label">Built on</span>
+					<span class="tag">Phone Enrichment</span>
+					<span class="tag">Caller Name</span>
+					<span class="tag">Carrier</span>
+					<span class="sol-card__more">Explore{{ arrow() }}</span>
+				</div>
+			</a>
+			<a class="sol-card" href="/solutions/data-providers/">
+				<p class="card__num">02</p>
+				<h3 class="sol-card__title">Data Providers &amp; Enrichment Platforms</h3>
+				<p class="sol-card__text">Expand your enrichment offering with specialized phone intelligence.</p>
+				<div class="sol-card__foot">
+					<span class="label">Built on</span>
+					<span class="tag">Caller Name</span>
+					<span class="tag">Carrier</span>
+					<span class="tag">LRN</span>
+					<span class="tag">Bulk</span>
+					<span class="sol-card__more">Explore{{ arrow() }}</span>
+				</div>
+			</a>
+			<div class="sol-card" id="fraud-prevention">
+				<p class="card__num">03</p>
+				<h3 class="sol-card__title">Fraud Prevention &amp; Risk</h3>
+				<p class="sol-card__text">Use available network information as supporting context for investigations and risk workflows.</p>
+				<div class="sol-card__foot">
+					<span class="label">Built on</span>
+					<span class="tag">Carrier</span>
+					<span class="tag">LRN</span>
+					<span class="tag tag--dashed">GhostVerify · coming soon</span>
+					<a class="sol-card__more link-arrow" href="/contact/">Talk to us{{ arrow() }}</a>
+				</div>
+			</div>
+			<a class="sol-card" href="/developers/">
+				<p class="card__num">04</p>
+				<h3 class="sol-card__title">Developer Applications</h3>
+				<p class="sol-card__text">Integrate phone intelligence into applications through structured APIs.</p>
+				<div class="sol-card__foot">
+					<span class="label">Built on</span>
+					<span class="tag">REST APIs</span>
+					<span class="tag">Structured responses</span>
+					<span class="sol-card__more">Explore{{ arrow() }}</span>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>
+
+{%- set cta = {
+	spaced: true,
+	title: "Start with the numbers you already have.",
+	text: "Discover what xGO can add.",
+	primary: { label: "Explore Products", href: "/products/" },
+	secondary: { label: "Contact Sales", href: "/contact/" }
+} %}
+{%- include "partials/cta-card.njk" %}

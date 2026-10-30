@@ -1,0 +1,14 @@
+{#- Breadcrumb trail. Set `crumbs` = [{label, href?}] and `crumbCurrent` = "Page name". Items without href render as plain text. -#}
+<nav aria-label="Breadcrumb">
+	<ol class="crumbs">
+		{%- for crumb in crumbs %}
+		{%- if crumb.href %}
+		<li><a class="crumbs__link" href="{{ crumb.href }}">{{ crumb.label }}</a></li>
+		{%- else %}
+		<li>{{ crumb.label }}</li>
+		{%- endif %}
+		<li aria-hidden="true">/</li>
+		{%- endfor %}
+		<li aria-current="page">{{ crumbCurrent }}</li>
+	</ol>
+</nav>
