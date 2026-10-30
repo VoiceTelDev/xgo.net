@@ -1,0 +1,167 @@
+---
+layout: layouts/base.njk
+title: "Carrier Lookup API"
+description: "Retrieve supported carrier identifiers and network-routing context for North American phone numbers. Enrich records, investigate data quality, and support fraud and telecom analysis."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Products", href: "/products/" }] %}
+		{%- set crumbCurrent = "Carrier Lookup" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair page-hero__grid">
+			<div class="pair__copy pair__copy--wide">
+				<p class="label label--ink label--dot">{{ dot() }}Carrier Lookup API</p>
+				<h1 id="page-title" class="h1">Find the network behind the number.</h1>
+				<p class="lede--hero">Enrich existing phone records with carrier-related information and routing context.</p>
+				<p class="text">Understand more about the network associated with a phone number without maintaining your own telecommunications lookup infrastructure.</p>
+				<div class="actions actions--mt">
+					<a class="btn btn--ink" href="/contact/">Get API Access</a>
+					<a class="btn btn--line" href="/developers/">View Documentation</a>
+				</div>
+			</div>
+			<figure class="pair__visual">
+				<div class="panel">
+					<div class="panel__head">
+						<p class="panel__title">Carrier Lookup</p>
+						<p class="label">Illustrative</p>
+					</div>
+					<div class="panel__body">
+						<div class="trace trace--input">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<p class="label">Input</p>
+								<p class="trace__input trace__input--sm">+1 212 555 0123</p>
+							</div>
+						</div>
+						<div class="trace">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<div class="trace__field">
+									<p class="trace__name">Carrier identifier</p>
+									<p class="trace__key">carrier.ocn</p>
+								</div>
+								<p class="trace__value">9101</p>
+							</div>
+						</div>
+						<div class="trace">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<div class="trace__field">
+									<p class="trace__name">Location Routing Number</p>
+									<p class="trace__key">routing.lrn</p>
+								</div>
+								<p class="trace__value">12125550000</p>
+							</div>
+						</div>
+						<div class="trace trace--last">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<div class="trace__field">
+									<p class="trace__name">Routing context</p>
+									<p class="trace__key">routing.state · routing.lata</p>
+								</div>
+								<p class="trace__value">NY · 132</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<figcaption class="caption">Illustrative response. Available identifiers vary by number.</figcaption>
+			</figure>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="does-title">
+	<div class="wrap split">
+		<p class="label split__label">What it does</p>
+		<div class="split__body">
+			<h2 id="does-title" class="h2">The telecommunications context behind your numbers.</h2>
+			<div class="grid grid--250 grid--gap-md mt-md">
+				<p class="text-md">Carrier Lookup retrieves supported carrier and network-routing information for North American telephone numbers.</p>
+				<p class="text-md">It helps applications understand the telecommunications context behind numbers already present in their systems.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="use-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">Use cases</p>
+			<h2 id="use-title" class="h2 split__body">Put carrier data to work.</h2>
+		</div>
+		<div class="grid mt-lg">
+			<div class="card">
+				<p class="card__num">01</p>
+				<h3 class="card__title">CRM enrichment</h3>
+				<p class="card__text">Add carrier-related fields to existing contact records.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">02</p>
+				<h3 class="card__title">Data quality</h3>
+				<p class="card__text">Investigate records where stored carrier information may be outdated.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">03</p>
+				<h3 class="card__title">Fraud investigations</h3>
+				<p class="card__text">Compare network information with other customer and transaction signals.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">04</p>
+				<h3 class="card__title">Telecommunications analysis</h3>
+				<p class="card__text">Use carrier and routing identifiers in network research and operational workflows.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="get-title">
+	<div class="wrap split">
+		<p class="label split__label">What you get</p>
+		<div class="split__body">
+			<h2 id="get-title" class="h2">Supported carrier-related identifiers and network-routing context.</h2>
+			<p class="text-md mt-md">Available fields may include the following, depending on the product configuration:</p>
+			<ul class="returns">
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Originating carrier identifiers</span><span class="returns__code">carrier</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}LRN-related information</span><span class="returns__code">routing.lrn</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Geographic routing attributes</span><span class="returns__code">routing.state · routing.lata</span></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="faq-title">
+	<div class="wrap split">
+		<p class="label split__label">FAQ</p>
+		<div class="split__body">
+			<h2 id="faq-title" class="h2">Common questions.</h2>
+			<dl class="faq">
+				<div class="faq__item">
+					<dt class="faq__q">Can a phone number change carriers?</dt>
+					<dd class="faq__a">Yes. Number portability allows phone numbers to move between participating carriers.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Does Carrier Lookup tell me whether a number is mobile?</dt>
+					<dd class="faq__a">No. Carrier Lookup does not classify numbers as mobile, landline, or VoIP.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Does Carrier Lookup confirm the number is active?</dt>
+					<dd class="faq__a">No. It describes the network context of a number, not whether the number is in service.</dd>
+				</div>
+			</dl>
+		</div>
+	</div>
+</section>
+
+{%- set related = ["enrich", "cnam", "lrn"] %}
+{%- include "partials/related.njk" %}
+
+{%- set cta = {
+	title: "Understand more about the numbers in your data.",
+	text: "Start with xGO Carrier Lookup.",
+	primary: { label: "Get API Access", href: "/contact/" },
+	secondary: { label: "View Documentation", href: "/developers/" }
+} %}
+{%- include "partials/cta-card.njk" %}

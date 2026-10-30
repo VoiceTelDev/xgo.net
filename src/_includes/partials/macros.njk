@@ -1,0 +1,29 @@
+{#- Shared macros. Import with: {% from "partials/macros.njk" import arrow, chevron, ghost, current, dot %} -#}
+
+{%- macro arrow() -%}
+<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+{%- endmacro -%}
+
+{%- macro chevron() -%}
+<svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg>
+{%- endmacro -%}
+
+{#- GhostVerify mark: the x in outline with a solid crosspoint. size: "", "sm" or "lg". -#}
+{%- macro ghost(size) -%}
+<svg class="ghost-icon{% if size %} ghost-icon--{{ size }}{% endif %}" viewBox="-24 -534 728 558" aria-hidden="true"><path class="ghost-icon__outline" d="M0 0L169.7 0L340 -170.2L510.3 0L680 0L424.9 -255L680 -510L510.3 -510L340 -339.8L169.7 -510L0 -510L255.1 -255Z"/><path class="ghost-icon__core" d="M340 -339.8L424.9 -255L340 -170.2L255.1 -255Z"/></svg>
+{%- endmacro -%}
+
+{#- Decorative diamond. mods: extra class names such as "dot--9 dot--ink". -#}
+{%- macro dot(mods) -%}
+<span class="dot{% if mods %} {{ mods }}{% endif %}" aria-hidden="true"></span>
+{%- endmacro -%}
+
+{#- aria-current for nav links: exact match for the homepage, section prefix elsewhere. -#}
+{%- macro current(url, href) -%}
+{%- if (href == "/" and url == "/") or (href != "/" and url.startsWith(href)) %} aria-current="page"{% endif -%}
+{%- endmacro -%}
+
+{#- A status chip. label: text; mods: "chip--sm"; hollow: show a hollow diamond before the text. -#}
+{%- macro chip(label, mods, plain) -%}
+<span class="chip{% if mods %} {{ mods }}{% endif %}">{% if not plain %}<span class="dot dot--7 dot--hollow dot--graphite" aria-hidden="true"></span>{% endif %}{{ label }}</span>
+{%- endmacro -%}

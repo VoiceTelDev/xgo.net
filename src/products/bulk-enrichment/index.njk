@@ -1,0 +1,153 @@
+---
+layout: layouts/base.njk
+title: "Bulk Phone Enrichment"
+description: "Add caller-name, carrier, and routing intelligence to large phone datasets. Built for CRM cleanup projects, data migrations, recurring enrichment, and data platform integrations."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Products", href: "/products/" }] %}
+		{%- set crumbCurrent = "Bulk Phone Enrichment" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair page-hero__grid">
+			<div class="pair__copy">
+				<p class="label label--ink">Bulk Phone Enrichment</p>
+				<h1 id="page-title" class="h1">Enrich more numbers. Spend less time doing it.</h1>
+				<p class="lede--hero">Add phone intelligence to large datasets without manually researching individual records.</p>
+				<p class="text">Whether you're reviewing a CRM export, enriching an existing contact database, or building a recurring data pipeline, xGO helps you bring caller-name and network information into the process.</p>
+				<div class="actions actions--mt">
+					<a class="btn btn--ink" href="/contact/">Contact Sales</a>
+					<a class="btn btn--line" href="/products/">Explore Products</a>
+				</div>
+			</div>
+			<figure class="pair__visual pair__visual--wide table-card table-card--shadow">
+				<div class="table-card__head">
+					<p class="panel__name">crm_export</p>
+					<p class="label">Illustrative</p>
+				</div>
+				<div class="table-card__scroll">
+					<table class="data-table">
+						<thead>
+							<tr>
+								<th scope="col">phone_number</th>
+								<th scope="col">caller_name</th>
+								<th scope="col">carrier</th>
+								<th scope="col">routing.lrn</th>
+								<th scope="col">routing</th>
+							</tr>
+						</thead>
+						<tbody>
+							{%- set rows = [
+								["+1 212 555 0101", true, true, true, true],
+								["+1 212 555 0102", false, true, true, true],
+								["+1 212 555 0103", true, true, true, true],
+								["+1 212 555 0104", true, false, true, true],
+								["+1 212 555 0105", true, true, true, true],
+								["+1 212 555 0106", false, true, true, true],
+								["+1 212 555 0107", true, true, true, true]
+							] %}
+							{%- for row in rows %}
+							<tr>
+								<td>{{ row[0] }}</td>
+								{%- for on in [row[1], row[2], row[3], row[4]] %}
+								<td>{% if on %}{{ dot("dot--9") }}<span class="visually-hidden">Returned</span>{% else %}{{ dot("dot--9 dot--hollow dot--muted") }}<span class="visually-hidden">Not available</span>{% endif %}</td>
+								{%- endfor %}
+							</tr>
+							{%- endfor %}
+						</tbody>
+					</table>
+				</div>
+				<figcaption class="table-card__legend">
+					<span class="legend-item">{{ dot() }}Returned</span>
+					<span class="legend-item">{{ dot("dot--hollow dot--muted") }}Not available for this number</span>
+				</figcaption>
+			</figure>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="use-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">How customers use it</p>
+			<h2 id="use-title" class="h2 split__body">Beyond one-off lookups.</h2>
+		</div>
+		<div class="grid mt-lg">
+			<div class="card">
+				<p class="card__num">01</p>
+				<h3 class="card__title">CRM cleanup projects</h3>
+				<p class="card__text">Enrich existing records with available caller-name and carrier information.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">02</p>
+				<h3 class="card__title">Data migrations</h3>
+				<p class="card__text">Add phone intelligence while consolidating or moving contact records.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">03</p>
+				<h3 class="card__title">Recurring enrichment</h3>
+				<p class="card__text">Refresh selected fields as part of scheduled data workflows.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">04</p>
+				<h3 class="card__title">Data platform integrations</h3>
+				<p class="card__text">Apply lookup products across customer datasets.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="fields-title">
+	<div class="wrap split">
+		<p class="label split__label">Available enrichment fields</p>
+		<div class="split__body">
+			<h2 id="fields-title" class="h2">Fields you can add.</h2>
+			<ul class="returns">
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Caller ID name</span><span class="returns__code">caller_name</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Carrier-related information</span><span class="returns__code">carrier</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Location Routing Number</span><span class="returns__code">routing.lrn</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Supported routing context</span><span class="returns__code">routing</span></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="how-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">How it works</p>
+			<h2 id="how-title" class="h2 split__body">From phone list to enriched records.</h2>
+		</div>
+		<ol class="grid steps steps--4">
+			<li class="step">
+				<span class="step__num">01</span>
+				<h3 class="step__title">Prepare your phone list.</h3>
+				<p class="step__text">Use phone numbers from your CRM, database, or enrichment platform.</p>
+			</li>
+			<li class="step">
+				<span class="step__num">02</span>
+				<h3 class="step__title">Select the fields you need.</h3>
+				<p class="step__text">Choose individual lookup products or combined enrichment.</p>
+			</li>
+			<li class="step">
+				<span class="step__num">03</span>
+				<h3 class="step__title">Process the records.</h3>
+				<p class="step__text">Use supported API-based workflows or an approved bulk delivery option.</p>
+			</li>
+			<li class="step">
+				<span class="step__num">04</span>
+				<h3 class="step__title">Map the results.</h3>
+				<p class="step__text">Add returned fields to your existing data.</p>
+			</li>
+		</ol>
+	</div>
+</section>
+
+{%- set cta = {
+	title: "Have more than a few numbers?",
+	text: "Talk to us about bulk enrichment.",
+	primary: { label: "Talk to Us About Bulk Enrichment", href: "/contact/" },
+	secondary: { label: "Explore Products", href: "/products/" }
+} %}
+{%- include "partials/cta-card.njk" %}

@@ -1,0 +1,27 @@
+{%- from "partials/macros.njk" import current -%}
+<header class="site-header">
+	<div class="wrap site-header__inner">
+		<a class="site-header__home" href="{{ build.home }}" aria-label="{{ site.brand }} home">
+			{%- set logoWidth = 70 %}
+			{%- include "partials/logo.njk" %}
+		</a>
+		<nav class="nav" aria-label="Primary">
+			{%- for item in site.nav %}
+			<a class="nav__link" href="{{ item.href }}"{{ current(page.url, item.href) }}>{{ item.label }}</a>
+			{%- endfor %}
+		</nav>
+		<div class="site-header__actions">
+			<a class="btn btn--ink btn--sm" href="{{ site.navCta.href }}">{{ site.navCta.label }}</a>
+			<button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+				<svg class="icon icon--20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+			</button>
+		</div>
+	</div>
+	<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile" hidden>
+		<div class="wrap mobile-menu__inner">
+			{%- for item in site.nav %}
+			<a class="mobile-menu__link" href="{{ item.href }}"{{ current(page.url, item.href) }}>{{ item.label }}</a>
+			{%- endfor %}
+		</div>
+	</nav>
+</header>

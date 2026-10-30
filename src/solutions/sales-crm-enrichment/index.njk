@@ -1,0 +1,144 @@
+---
+layout: layouts/base.njk
+title: "Sales & CRM Enrichment"
+description: "Enrich existing CRM contact records with available caller-name and carrier intelligence. Add context to phone data, investigate unknown numbers, and flag records that may need review."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Solutions", href: "/solutions/" }] %}
+		{%- set crumbCurrent = "Sales & CRM Enrichment" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair page-hero__grid">
+			<div class="pair__copy">
+				<p class="label label--ink">Sales &amp; CRM Enrichment</p>
+				<h1 id="page-title" class="h1">Your CRM has phone numbers. Make them more useful.</h1>
+				<p class="lede--hero">Enrich existing contact records with available caller-name and carrier intelligence.</p>
+				<p class="text">Use xGO to add context to phone data, investigate unknown numbers, and identify records that may need review.</p>
+				<div class="actions actions--mt">
+					<a class="btn btn--ink" href="/products/">Explore Products</a>
+					<a class="btn btn--line" href="/contact/">Contact Sales</a>
+				</div>
+			</div>
+			<figure class="pair__visual pair__visual--wide table-card table-card--shadow">
+				<div class="table-card__head">
+					<p class="panel__title">Contact records</p>
+					<p class="label">Illustrative</p>
+				</div>
+				<div class="table-card__scroll">
+					<table class="data-table">
+						<thead>
+							<tr>
+								<th scope="col">phone</th>
+								<th scope="col">name in CRM</th>
+								<th scope="col" class="th-accent">caller ID name</th>
+								<th scope="col">record</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>+1 212 555 0101</td>
+								<td>EXAMPLE BUSINESS</td>
+								<td>EXAMPLE BUSINESS</td>
+								<td><span class="status">{{ dot("dot--ink") }}Matches</span></td>
+							</tr>
+							<tr>
+								<td>+1 212 555 0102</td>
+								<td class="muted">—</td>
+								<td>EXAMPLE SERVICES</td>
+								<td><span class="status">{{ dot() }}Added</span></td>
+							</tr>
+							<tr>
+								<td>+1 212 555 0103</td>
+								<td>EXAMPLE CO</td>
+								<td>EXAMPLE HOLDINGS</td>
+								<td><span class="status status--accent">{{ dot("dot--hollow dot--accent") }}Review</span></td>
+							</tr>
+							<tr>
+								<td>+1 212 555 0104</td>
+								<td>EXAMPLE GROUP</td>
+								<td class="muted">not available</td>
+								<td><span class="status status--muted">{{ dot("dot--hollow dot--muted") }}Unchanged</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<figcaption class="table-card__caption">Caller-name records are not proof of subscriber identity. Use them as context alongside your existing data.</figcaption>
+			</figure>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="challenge-title">
+	<div class="wrap split">
+		<p class="label split__label">The challenge</p>
+		<div class="split__body">
+			<h2 id="challenge-title" class="h2">Contact databases change.</h2>
+			<ul class="returns returns--ink">
+				<li class="returns__item">{{ dot("dot--ink") }}People move between companies.</li>
+				<li class="returns__item">{{ dot("dot--ink") }}Phone numbers are reassigned.</li>
+				<li class="returns__item">{{ dot("dot--ink") }}Carrier relationships change.</li>
+			</ul>
+			<div class="grid grid--250 grid--gap-md mt-md">
+				<p class="text-md">Information collected months or years ago may no longer reflect the current record.</p>
+				<p class="text-md">Your CRM may still contain a valid-looking phone number, but the surrounding information can be incomplete or inconsistent.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="help-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">How <span class="brand">xGO</span> helps</p>
+			<h2 id="help-title" class="h2 split__body">Add context to every contact.</h2>
+		</div>
+		<div class="grid cases">
+			<div class="case">
+				<p class="card__code">{{ dot() }}caller_name</p>
+				<h3 class="case__title">Add caller-name context.</h3>
+				<p class="text-sm">Retrieve available caller ID names to supplement existing records.</p>
+			</div>
+			<div class="case">
+				<p class="card__code">{{ dot() }}carrier</p>
+				<h3 class="case__title">Enrich carrier information.</h3>
+				<p class="text-sm">Add supported carrier-related fields to phone records.</p>
+			</div>
+			<div class="case">
+				<p class="card__code">{{ dot("dot--hollow dot--accent") }}review</p>
+				<h3 class="case__title">Investigate inconsistencies.</h3>
+				<p class="text-sm">Compare returned data against existing CRM fields.</p>
+			</div>
+			<div class="case">
+				<p class="card__code">{{ dot("dot--ink") }}workflows</p>
+				<h3 class="case__title">Support enrichment workflows.</h3>
+				<p class="text-sm">Bring phone intelligence into the tools and processes your team already uses.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="uses-title">
+	<div class="wrap split">
+		<p class="label split__label">Common use cases</p>
+		<div class="split__body">
+			<h2 id="uses-title" class="h2">Where teams start.</h2>
+			<div class="pills">
+				<span class="pill">{{ dot() }}Contact database enrichment</span>
+				<span class="pill">{{ dot() }}CRM cleanup</span>
+				<span class="pill">{{ dot() }}Lead research</span>
+				<span class="pill">{{ dot() }}Data migration projects</span>
+				<span class="pill">{{ dot() }}Contact record investigation</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+{%- set cta = {
+	title: "Get more from the phone data you already have.",
+	text: "Explore xGO Phone Enrichment.",
+	primary: { label: "Explore Phone Enrichment", href: "/products/phone-enrichment/" },
+	secondary: { label: "Contact Sales", href: "/contact/" }
+} %}
+{%- include "partials/cta-card.njk" %}

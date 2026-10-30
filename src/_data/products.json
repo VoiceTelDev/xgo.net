@@ -1,0 +1,45 @@
+{
+	"enrich": {
+		"name": "Phone Enrichment",
+		"url": "/products/phone-enrichment/",
+		"code": "caller_name · carrier · routing",
+		"tagline": "More information from every phone number.",
+		"short": "Caller name, carrier, and routing intelligence in one lookup."
+	},
+	"cnam": {
+		"name": "Caller Name Lookup",
+		"url": "/products/caller-name-lookup/",
+		"code": "caller_name",
+		"tagline": "Find the name on the caller ID record.",
+		"short": "Available caller ID name."
+	},
+	"carrier": {
+		"name": "Carrier Lookup",
+		"url": "/products/carrier-lookup/",
+		"code": "carrier · routing",
+		"tagline": "Find the network behind the number.",
+		"short": "Available carrier-related identifiers and routing context."
+	},
+	"lrn": {
+		"name": "LRN Lookup",
+		"url": "/products/lrn-lookup/",
+		"code": "routing.lrn",
+		"tagline": "Get the routing information behind the number.",
+		"short": "LRN and supported routing fields."
+	},
+	"bulk": {
+		"name": "Bulk Phone Enrichment",
+		"url": "/products/bulk-enrichment/",
+		"code": "volume",
+		"tagline": "Enrich more numbers. Spend less time doing it.",
+		"short": "Apply xGO phone intelligence to larger datasets."
+	},
+	"ghostverify": {
+		"name": "GhostVerify",
+		"url": "/products/ghostverify/",
+		"code": "early access",
+		"tagline": "Verify the number. Understand the risk.",
+		"short": "Silent verification and SIM change intelligence.",
+		"status": "Coming soon"
+	}
+}

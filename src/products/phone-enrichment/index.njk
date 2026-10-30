@@ -1,0 +1,221 @@
+---
+layout: layouts/base.njk
+title: "Phone Enrichment API"
+description: "Combine available caller-name, carrier, and routing information in one lookup. Enrich CRM contacts, investigate unknown numbers, and add telecommunications intelligence to your data workflows."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Products", href: "/products/" }] %}
+		{%- set crumbCurrent = "Phone Enrichment" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair page-hero__grid">
+			<div class="pair__copy pair__copy--wide">
+				<p class="label label--ink label--dot">{{ dot() }}Phone Enrichment API</p>
+				<h1 id="page-title" class="h1">Turn phone numbers into richer contact records.</h1>
+				<p class="lede--hero">Get more information from the phone numbers you already have.</p>
+				<p class="text">xGO Phone Enrichment combines available caller-name, carrier, and routing information to give your records additional context.</p>
+				<p class="text">Enrich CRM contacts, investigate unknown numbers, and add telecommunications intelligence to your data workflows.</p>
+				<div class="actions actions--mt">
+					<a class="btn btn--ink" href="/contact/">Get API Access</a>
+					<a class="btn btn--line" href="/developers/">View Documentation</a>
+				</div>
+			</div>
+			<figure class="pair__visual">
+				<div class="panel">
+					<div class="panel__head">
+						<p class="panel__title">Contact record</p>
+						<p class="label">Illustrative</p>
+					</div>
+					<div class="panel__body">
+						<div class="trace trace--input">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<p class="label">Phone</p>
+								<p class="trace__input trace__input--sm">+1 212 555 0123</p>
+							</div>
+						</div>
+						<div class="trace trace--plain">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<p class="label label--signal trace__note">Added by <span class="brand">xGO</span></p>
+						</div>
+						{%- set rows = [
+							["Caller ID name", "caller_name.value", "EXAMPLE BUSINESS"],
+							["Carrier", "carrier.ocn", "9101"],
+							["Location Routing Number", "routing.lrn", "12125550000"],
+							["Routing context", "routing.state · routing.lata", "NY · 132"]
+						] %}
+						{%- for row in rows %}
+						<div class="trace{% if loop.last %} trace--last{% endif %}">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<div class="trace__field">
+									<p class="trace__name">{{ row[0] }}</p>
+									<p class="trace__key">{{ row[1] }}</p>
+								</div>
+								<p class="trace__value">{{ row[2] }}</p>
+							</div>
+						</div>
+						{%- endfor %}
+					</div>
+				</div>
+				<figcaption class="caption">Illustrative response. Not every field is available for every number.</figcaption>
+			</figure>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="does-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">What it does</p>
+			<div class="split__body">
+				<h2 id="does-title" class="h2">More than just a phone number.</h2>
+				<div class="grid grid--250 grid--gap-md mt-md">
+					<p class="text-md">A phone number is often one of the few pieces of information shared across customer records, lead lists, and business applications. But the number itself doesn't tell you much.</p>
+					<p class="text-md">xGO adds available telecommunications information so you can better understand the records you're working with.</p>
+				</div>
+			</div>
+		</div>
+		<div class="grid cases grid--280">
+			<div class="case">
+				<p class="card__code">{{ dot() }}caller_name</p>
+				<h3 class="case__title">Caller-name information</h3>
+				<p class="text-sm">Retrieve the available caller ID name associated with a number.</p>
+			</div>
+			<div class="case">
+				<p class="card__code">{{ dot() }}carrier</p>
+				<h3 class="case__title">Carrier information</h3>
+				<p class="text-sm">Add supported carrier and network-routing context.</p>
+			</div>
+			<div class="case">
+				<p class="card__code">{{ dot() }}routing.lrn</p>
+				<h3 class="case__title">Location Routing Number</h3>
+				<p class="text-sm">Retrieve LRN information for routing and portability-related analysis.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="use-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">Use cases</p>
+			<h2 id="use-title" class="h2 split__body">Put phone enrichment to work.</h2>
+		</div>
+		<div class="grid mt-lg">
+			<div class="card">
+				<p class="card__num">01</p>
+				<h3 class="card__title">Enrich your CRM</h3>
+				<p class="card__text">Add caller-name and carrier-related fields to existing contact records.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">02</p>
+				<h3 class="card__title">Investigate unknown numbers</h3>
+				<p class="card__text">Retrieve available caller ID information when a phone number doesn't match an existing record.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">03</p>
+				<h3 class="card__title">Identify potential data mismatches</h3>
+				<p class="card__text">Compare returned caller-name and carrier information with the data already in your systems.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">04</p>
+				<h3 class="card__title">Build enrichment workflows</h3>
+				<p class="card__text">Integrate phone intelligence into data pipelines, applications, and automated processes.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="how-title">
+	<div class="wrap pair pair--end">
+		<div class="pair__copy stack--md">
+			<p class="label">How it works</p>
+			<h2 id="how-title" class="h2">One integration. Multiple data points.</h2>
+			<p class="text-md">Instead of building separate integrations for every phone intelligence requirement, use xGO Phone Enrichment to retrieve supported fields through one product.</p>
+			<p class="text-md">Choose the information you need and map the results into your existing data model.</p>
+		</div>
+		<div class="pair__visual combine-box" aria-hidden="true">
+			<div class="combine">
+				<div class="combine__inputs">
+					<span class="combine__chip">Caller name</span>
+					<span class="combine__chip">Carrier</span>
+					<span class="combine__chip">Routing &amp; LRN</span>
+				</div>
+				<svg class="combine__lines" viewBox="0 0 64 144"><path d="M0 20.5H32M0 72.5H64M0 124.5H32M32.5 20.5V125"/></svg>
+				<div class="combine__out">
+					<span class="dot dot--14"></span>
+					<span class="combine__label">
+						<span class="combine__name">Phone Enrichment</span>
+						<span class="combine__meta">one integration</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="get-title">
+	<div class="wrap split">
+		<p class="label split__label">What you get</p>
+		<div class="split__body">
+			<h2 id="get-title" class="h2">What does Phone Enrichment return?</h2>
+			<p class="text-md mt-md">Depending on data availability, supported results may include:</p>
+			<ul class="returns">
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Caller ID name</span><span class="returns__code">caller_name</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Carrier-related information</span><span class="returns__code">carrier</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Location Routing Number</span><span class="returns__code">routing.lrn</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Routing and portability-related context</span><span class="returns__code">routing</span></li>
+			</ul>
+			<div class="callout">
+				{{ dot("dot--11 dot--hollow") }}
+				<div class="callout__body">
+					<p class="label label--ink">Important distinction</p>
+					<p class="callout__lead">Not every field is available for every number.</p>
+					<p class="callout__text">Caller-name records are not proof of subscriber identity, and routing information does not establish whether a phone is currently active.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="faq-title">
+	<div class="wrap split">
+		<p class="label split__label">FAQ</p>
+		<div class="split__body">
+			<h2 id="faq-title" class="h2">Common questions.</h2>
+			<dl class="faq">
+				<div class="faq__item">
+					<dt class="faq__q">Does Phone Enrichment find new phone numbers?</dt>
+					<dd class="faq__a">No. xGO enriches phone numbers you already have. It does not search for a person's phone number using their name, email address, or LinkedIn profile.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Does it verify that a number belongs to a particular person?</dt>
+					<dd class="faq__a">No. Caller-name information can provide useful context, but it is not verified subscriber identity.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Can I use it for CRM enrichment?</dt>
+					<dd class="faq__a">Yes. Phone Enrichment is designed to provide additional fields that can be mapped into existing CRM records.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Does it tell me whether a number is active?</dt>
+					<dd class="faq__a">Not with the current enrichment data. Live activity verification requires a different data source.</dd>
+				</div>
+			</dl>
+		</div>
+	</div>
+</section>
+
+{%- set related = ["cnam", "carrier", "lrn"] %}
+{%- set relatedTitle = "Specialized alternatives" %}
+{%- include "partials/related.njk" %}
+
+{%- set cta = {
+	title: "There's more to every number.",
+	text: "Start enriching your phone data with xGO.",
+	primary: { label: "Get API Access", href: "/contact/" },
+	secondary: { label: "View Documentation", href: "/developers/" }
+} %}
+{%- include "partials/cta-card.njk" %}

@@ -1,0 +1,22 @@
+{#- The illustrative Phone Enrichment JSON response. Set `code` = { name, label }. -#}
+<div class="code">
+	<div class="code__head">
+		<p class="code__name">{{ code.name }}</p>
+		<p class="label code__label">{{ code.label }}</p>
+	</div>
+	<pre class="code__body"><span class="tp">{</span>
+  <span class="tk">"phone_number"</span><span class="tp">: </span><span class="ts">"+12125550123"</span><span class="tp">,</span>
+  <span class="tk">"caller_name"</span><span class="tp">: {</span>
+    <span class="tk">"value"</span><span class="tp">: </span><span class="ts">"EXAMPLE BUSINESS"</span><span class="tp">,</span>
+    <span class="tk">"available"</span><span class="tp">: </span><span class="tl">true</span>
+  <span class="tp">},</span>
+  <span class="tk">"carrier"</span><span class="tp">: {</span>
+    <span class="tk">"ocn"</span><span class="tp">: </span><span class="ts">"9101"</span>
+  <span class="tp">},</span>
+  <span class="tk">"routing"</span><span class="tp">: {</span>
+    <span class="tk">"lrn"</span><span class="tp">: </span><span class="ts">"12125550000"</span><span class="tp">,</span>
+    <span class="tk">"state"</span><span class="tp">: </span><span class="ts">"NY"</span><span class="tp">,</span>
+    <span class="tk">"lata"</span><span class="tp">: </span><span class="ts">"132"</span>
+  <span class="tp">}</span>
+<span class="tp">}</span></pre>
+</div>

@@ -1,0 +1,167 @@
+---
+layout: layouts/base.njk
+title: "LRN Lookup API"
+description: "Retrieve Location Routing Numbers and supported routing attributes for North American phone numbers. Built for telecommunications research, routing analysis, and portability-aware workflows."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Products", href: "/products/" }] %}
+		{%- set crumbCurrent = "LRN Lookup" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair page-hero__grid">
+			<div class="pair__copy pair__copy--wide">
+				<p class="label label--ink label--dot">{{ dot() }}LRN Lookup API</p>
+				<h1 id="page-title" class="h1">Get the routing information behind a phone number.</h1>
+				<p class="lede--hero">Retrieve Location Routing Numbers for North American telephone numbers through a straightforward API.</p>
+				<p class="text">Use LRN data for telecommunications research, routing analysis, and portability-aware workflows.</p>
+				<div class="actions actions--mt">
+					<a class="btn btn--ink" href="/developers/">View API Documentation</a>
+					<a class="btn btn--line" href="/contact/">Get API Access</a>
+				</div>
+			</div>
+			<figure class="pair__visual">
+				<div class="panel">
+					<div class="panel__head">
+						<p class="panel__title">LRN Lookup</p>
+						<p class="label">Illustrative</p>
+					</div>
+					<div class="panel__body">
+						<div class="trace trace--input">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<p class="label">Input</p>
+								<p class="trace__input trace__input--sm">+1 212 555 0123</p>
+							</div>
+						</div>
+						<div class="trace">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<div class="trace__field">
+									<p class="trace__name">Location Routing Number</p>
+									<p class="trace__key">routing.lrn</p>
+								</div>
+								<p class="trace__value trace__value--lg">12125550000</p>
+							</div>
+						</div>
+						<div class="trace">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<div class="trace__field">
+									<p class="trace__name">Routing attributes</p>
+									<p class="trace__key">routing.state · routing.lata</p>
+								</div>
+								<p class="trace__value">NY · 132</p>
+							</div>
+						</div>
+						<div class="trace trace--last">
+							<div class="trace__rail" aria-hidden="true"></div>
+							<div class="trace__content">
+								<div class="trace__field">
+									<p class="trace__name">Network identifier</p>
+									<p class="trace__key">carrier.ocn</p>
+								</div>
+								<p class="trace__value">9101</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<figcaption class="caption">Illustrative response. Supported routing fields vary by number.</figcaption>
+			</figure>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="does-title">
+	<div class="wrap split">
+		<p class="label split__label">What it does</p>
+		<div class="split__body">
+			<h2 id="does-title" class="h2">What is an LRN?</h2>
+			<p class="lede--md mt-md">A Location Routing Number identifies routing information associated with a telephone number.</p>
+			<div class="grid grid--250 grid--gap-md mt-sm">
+				<p class="text-md">Because numbers can be ported between carriers, their routing information may differ from assumptions based on their original number prefix.</p>
+				<p class="text-md">xGO provides access to this information without requiring customers to maintain their own LRN lookup infrastructure.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="use-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">Use cases</p>
+			<h2 id="use-title" class="h2 split__body">Put routing data to work.</h2>
+		</div>
+		<div class="grid mt-lg">
+			<div class="card">
+				<p class="card__num">01</p>
+				<h3 class="card__title">Number portability research</h3>
+				<p class="card__text">Examine routing information associated with ported numbers.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">02</p>
+				<h3 class="card__title">Carrier analysis</h3>
+				<p class="card__text">Add routing identifiers to existing phone datasets.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">03</p>
+				<h3 class="card__title">Telecommunications applications</h3>
+				<p class="card__text">Support systems that use LRN information as an input to routing or network analysis.</p>
+			</div>
+			<div class="card">
+				<p class="card__num">04</p>
+				<h3 class="card__title">Data enrichment</h3>
+				<p class="card__text">Add specialized routing information to phone records.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="get-title">
+	<div class="wrap split">
+		<p class="label split__label">What you get</p>
+		<div class="split__body">
+			<h2 id="get-title" class="h2">What LRN Lookup returns.</h2>
+			<ul class="returns">
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Location Routing Number</span><span class="returns__code">routing.lrn</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Supported routing attributes</span><span class="returns__code">routing</span></li>
+				<li class="returns__item returns__item--split"><span class="returns__name">{{ dot("dot--9") }}Available network identifiers</span><span class="returns__code">carrier</span></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="faq-title">
+	<div class="wrap split">
+		<p class="label split__label">FAQ</p>
+		<div class="split__body">
+			<h2 id="faq-title" class="h2">Common questions.</h2>
+			<dl class="faq">
+				<div class="faq__item">
+					<dt class="faq__q">Is LRN the same as the phone number?</dt>
+					<dd class="faq__a">No. An LRN is a routing identifier used within the telecommunications network.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Does an LRN prove that a number has been ported?</dt>
+					<dd class="faq__a">Not by itself. A definitive portability determination requires appropriate supporting information.</dd>
+				</div>
+				<div class="faq__item">
+					<dt class="faq__q">Does LRN Lookup verify phone activity?</dt>
+					<dd class="faq__a">No. It returns routing information, not whether the number is currently in service.</dd>
+				</div>
+			</dl>
+		</div>
+	</div>
+</section>
+
+{%- set related = ["enrich", "carrier", "cnam"] %}
+{%- include "partials/related.njk" %}
+
+{%- set cta = {
+	title: "Routing intelligence without the complexity.",
+	text: "Get started with xGO LRN Lookup.",
+	primary: { label: "Get API Access", href: "/contact/" },
+	secondary: { label: "View Documentation", href: "/developers/" }
+} %}
+{%- include "partials/cta-card.njk" %}

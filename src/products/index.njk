@@ -1,0 +1,198 @@
+---
+layout: layouts/base.njk
+title: "Phone Intelligence Products"
+description: "Caller name, carrier, LRN, and combined phone enrichment APIs, plus bulk enrichment for larger datasets and the GhostVerify verification family, now in development."
+---
+{%- from "partials/macros.njk" import arrow, dot, chip %}
+
+<section class="page-hero" aria-labelledby="page-title">
+	<div class="wrap pair pair--end">
+		<div class="pair__copy pair__copy--main">
+			<p class="label">Phone intelligence products</p>
+			<h1 id="page-title" class="h1 h1--xl">The right data for every phone number.</h1>
+			<p class="lede measure">From caller names to carrier and routing intelligence, xGO gives you the information you need to understand more about the phone numbers in your systems.</p>
+			<p class="text measure">Use individual APIs or combine multiple data products to enrich records and support automated workflows.</p>
+			<div class="actions">
+				<a class="btn btn--ink" href="/contact/">Get API Access</a>
+				<a class="btn btn--line" href="/developers/">View Documentation</a>
+			</div>
+		</div>
+		<nav class="pair__visual pair__visual--aside index" aria-label="Product index">
+			<p class="label index__title">Index</p>
+			{%- for key in ["enrich", "cnam", "carrier", "lrn", "bulk"] %}
+			<a class="index__link" href="{{ products[key].url }}"><span>{{ products[key].name }}</span><span class="index__num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span></a>
+			{%- endfor %}
+			<a class="index__link" href="{{ products.ghostverify.url }}"><span>GhostVerify</span>{{ chip("Coming soon", "chip--sm", true) }}</a>
+		</nav>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="enrich-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">Enrichment products</p>
+			<h2 id="enrich-title" class="h2 split__body">Enrich the numbers you already have.</h2>
+		</div>
+		<div class="grid grid--300 mt-lg">
+			<article class="card card--product card--featured">
+				<div class="card__copy">
+					<p class="card__code">{{ dot() }}caller_name · carrier · routing</p>
+					<h3 class="card__title card__title--featured">Phone Enrichment</h3>
+					<p class="card__lead card__lead--featured">One lookup. More useful information.</p>
+					<p class="text measure-sm">Combine available caller-name, carrier, and routing data to add context to existing phone records.</p>
+					<div class="mt-xs"><a class="btn btn--ink" href="/products/phone-enrichment/">View Product{{ arrow() }}</a></div>
+				</div>
+				<dl class="card__meta">
+					<div class="card__meta-row"><dt class="label">Returns</dt><dd>Caller name, carrier-related information, and routing fields where available.</dd></div>
+					<div class="card__meta-row"><dt class="label">Common uses</dt><dd>CRM enrichment, contact research, data quality, and enrichment pipelines.</dd></div>
+				</dl>
+			</article>
+			<article class="card card--product">
+				<p class="card__code">{{ dot() }}caller_name</p>
+				<h3 class="card__title card__title--product">Caller Name Lookup</h3>
+				<p class="card__lead">Find the name associated with a phone number's caller ID record.</p>
+				<p class="card__text">Retrieve available CNAM information to enrich records and investigate caller-name discrepancies.</p>
+				<dl class="card__meta">
+					<div class="card__meta-row"><dt class="label">Returns</dt><dd>Available caller ID name.</dd></div>
+					<div class="card__meta-row"><dt class="label">Common uses</dt><dd>Contact enrichment, caller identification, and CRM research.</dd></div>
+				</dl>
+				<div class="card__foot"><a class="link-arrow" href="/products/caller-name-lookup/">View Product<span class="visually-hidden">: Caller Name Lookup</span>{{ arrow() }}</a></div>
+			</article>
+			<article class="card card--product">
+				<p class="card__code">{{ dot() }}carrier · routing</p>
+				<h3 class="card__title card__title--product">Carrier Lookup</h3>
+				<p class="card__lead">Understand the carrier context behind a phone number.</p>
+				<p class="card__text">Retrieve available carrier and network-routing information for phone numbers in your existing datasets.</p>
+				<dl class="card__meta">
+					<div class="card__meta-row"><dt class="label">Returns</dt><dd>Available carrier-related identifiers and routing context.</dd></div>
+					<div class="card__meta-row"><dt class="label">Common uses</dt><dd>Carrier analysis, phone enrichment, and network research.</dd></div>
+				</dl>
+				<div class="card__foot"><a class="link-arrow" href="/products/carrier-lookup/">View Product<span class="visually-hidden">: Carrier Lookup</span>{{ arrow() }}</a></div>
+			</article>
+			<article class="card card--product">
+				<p class="card__code">{{ dot() }}routing.lrn</p>
+				<h3 class="card__title card__title--product">LRN Lookup</h3>
+				<p class="card__lead">Retrieve a phone number's routing number.</p>
+				<p class="card__text">Access Location Routing Numbers for telecommunications data workflows.</p>
+				<dl class="card__meta">
+					<div class="card__meta-row"><dt class="label">Returns</dt><dd>LRN and supported routing fields.</dd></div>
+					<div class="card__meta-row"><dt class="label">Common uses</dt><dd>Routing analysis, number portability research, and telecom enrichment.</dd></div>
+				</dl>
+				<div class="card__foot"><a class="link-arrow" href="/products/lrn-lookup/">View Product<span class="visually-hidden">: LRN Lookup</span>{{ arrow() }}</a></div>
+			</article>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="scale-title">
+	<div class="wrap pair">
+		<div class="pair__copy stack--md">
+			<p class="label">Enrichment at scale</p>
+			<h2 id="scale-title" class="h2">Have more than a few numbers?</h2>
+			<p class="lede--md">Bulk Phone Enrichment</p>
+			<p class="text">Apply xGO phone intelligence to larger datasets.</p>
+			<p class="text">Whether you're preparing a CRM cleanup project, enriching an existing contact database, or integrating phone data into a recurring process, xGO can support workflows beyond one-off lookups.</p>
+			<div><a class="btn btn--ink" href="/products/bulk-enrichment/">Explore Bulk Enrichment</a></div>
+		</div>
+		<figure class="pair__visual pair__visual--code table-card">
+			<div class="table-card__head">
+				<p class="mono panel__name">contacts_export</p>
+				<p class="label">Illustrative</p>
+			</div>
+			<div class="table-card__scroll">
+				<table class="data-table">
+					<thead>
+						<tr>
+							<th scope="col">phone_number</th>
+							<th scope="col">caller_name</th>
+							<th scope="col">carrier</th>
+							<th scope="col">routing</th>
+						</tr>
+					</thead>
+					<tbody>
+						{%- set rows = [
+							["+1 212 555 0101", true, true, true],
+							["+1 212 555 0102", false, true, true],
+							["+1 212 555 0103", true, true, true],
+							["+1 212 555 0104", true, false, true],
+							["+1 212 555 0105", true, true, true]
+						] %}
+						{%- for row in rows %}
+						<tr>
+							<td>{{ row[0] }}</td>
+							{%- for on in [row[1], row[2], row[3]] %}
+							<td>{% if on %}{{ dot("dot--9") }}<span class="visually-hidden">Returned</span>{% else %}{{ dot("dot--9 dot--hollow dot--muted") }}<span class="visually-hidden">Not available</span>{% endif %}</td>
+							{%- endfor %}
+						</tr>
+						{%- endfor %}
+					</tbody>
+				</table>
+			</div>
+			<figcaption class="table-card__legend">
+				<span class="legend-item">{{ dot() }}Returned</span>
+				<span class="legend-item">{{ dot("dot--hollow dot--muted") }}Not available for this number</span>
+			</figcaption>
+		</figure>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="gv-title">
+	<div class="wrap">
+		<div class="split">
+			<div class="split__label split__label--stack">
+				<p class="label">Verification &amp; fraud intelligence</p>
+				{{ chip("Coming soon") }}
+			</div>
+			<div class="split__body">
+				<h2 id="gv-title" class="h2">Introducing GhostVerify.</h2>
+				<p class="lede measure">A new family of APIs designed to help businesses verify phone-number possession and detect recent SIM changes.</p>
+			</div>
+		</div>
+		<div class="grid grid--280 grid--gap-sm mt-lg">
+			<div class="dash-card dash-card--stack">
+				{{ dot("dot--11 dot--hollow") }}
+				<h3 class="dash-card__title">GhostVerify Silent</h3>
+				<p class="dash-card__text">Verify phone-number possession without an SMS code.</p>
+				{{ chip("In development", "chip--sm card__chip", true) }}
+			</div>
+			<div class="dash-card dash-card--stack">
+				{{ dot("dot--11 dot--hollow") }}
+				<h3 class="dash-card__title">GhostVerify SIM</h3>
+				<p class="dash-card__text">Check for recent SIM changes and retrieve available change information.</p>
+				{{ chip("In development", "chip--sm card__chip", true) }}
+			</div>
+			<div class="dash-card dash-card--stack">
+				{{ dot("dot--11 dot--hollow") }}
+				<h3 class="dash-card__title">GhostVerify Complete</h3>
+				<p class="dash-card__text">Combine silent verification and SIM change intelligence.</p>
+				{{ chip("In development", "chip--sm card__chip", true) }}
+			</div>
+		</div>
+		<div class="mt-md"><a class="link-arrow" href="/products/ghostverify/">Explore GhostVerify{{ arrow() }}</a></div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="find-title">
+	<div class="wrap split">
+		<p class="label split__label">Find your product</p>
+		<div class="split__body">
+			<h2 id="find-title" class="h2">Not sure which lookup you need?</h2>
+			<div class="decide">
+				<a class="decide__row" href="/products/phone-enrichment/"><span class="decide__q">Want to add information to existing contact records?</span><span class="decide__a">Start with Phone Enrichment{{ arrow() }}</span></a>
+				<a class="decide__row" href="/products/caller-name-lookup/"><span class="decide__q">Want to retrieve a caller ID name?</span><span class="decide__a">Choose Caller Name Lookup{{ arrow() }}</span></a>
+				<a class="decide__row" href="/products/carrier-lookup/"><span class="decide__q">Want carrier-related information?</span><span class="decide__a">Choose Carrier Lookup{{ arrow() }}</span></a>
+				<a class="decide__row" href="/products/lrn-lookup/"><span class="decide__q">Need a Location Routing Number?</span><span class="decide__a">Choose LRN Lookup{{ arrow() }}</span></a>
+				<a class="decide__row" href="/products/bulk-enrichment/"><span class="decide__q">Working with large datasets?</span><span class="decide__a">Explore Bulk Phone Enrichment{{ arrow() }}</span></a>
+				<a class="decide__row" href="/products/ghostverify/"><span class="decide__q">Building authentication or fraud workflows?</span><span class="decide__a">Join the GhostVerify early access program{{ arrow() }}</span></a>
+			</div>
+		</div>
+	</div>
+</section>
+
+{%- set cta = {
+	title: "Put better phone intelligence to work.",
+	text: "Explore xGO APIs and find the right data for your application.",
+	primary: { label: "Get API Access", href: "/contact/" },
+	secondary: { label: "View Documentation", href: "/developers/" }
+} %}
+{%- include "partials/cta-card.njk" %}

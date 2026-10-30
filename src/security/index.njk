@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+title: "Security & Privacy"
+description: "How xGO phone intelligence is intended to be used: responsible data use, access controls, data handling, and the authorization requirements for verification products."
+---
+{%- from "partials/macros.njk" import arrow, dot, chip %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Company" }] %}
+		{%- set crumbCurrent = "Security & Privacy" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair pair--end page-hero__grid">
+			<div class="pair__copy pair__copy--main">
+				<p class="label label--ink">Security &amp; Privacy</p>
+				<h1 id="page-title" class="h1 h1--xl">Responsible access to phone intelligence.</h1>
+			</div>
+			<div class="pair__visual pair__visual--aside aside-rule">
+				<p class="lede lede--ink">We recognize that phone data can play an important role in customer records, identity workflows, and business decisions.</p>
+				<p class="text">xGO is committed to providing clear information about how its services are intended to be used.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist section--policies" aria-label="Security and privacy practices">
+	<div class="wrap">
+		<div class="policy">
+			<div class="policy__key">
+				<p class="group-num">01</p>
+				<h2 class="policy__title">Responsible data use</h2>
+			</div>
+			<div class="policy__body">
+				<p class="policy__lead">xGO products are designed for legitimate business applications, including enrichment, telecommunications analysis, and authorized verification workflows.</p>
+				<p class="policy__text">Customers are responsible for ensuring that their use of phone data complies with applicable laws and contractual requirements.</p>
+			</div>
+		</div>
+		<div class="policy">
+			<div class="policy__key">
+				<p class="group-num">02</p>
+				<h2 class="policy__title">Access controls</h2>
+			</div>
+			<div class="policy__body">
+				<p class="policy__lead">API access is issued per customer and should be restricted to authorized applications.</p>
+			</div>
+		</div>
+		<div class="policy">
+			<div class="policy__key">
+				<p class="group-num">03</p>
+				<h2 class="policy__title">Data handling</h2>
+			</div>
+			<div class="policy__body">
+				<p class="policy__lead">Retention, logging, security controls, subprocessors, and customer data rights are described in our <a href="/privacy/">Privacy Policy</a> and <a href="/terms/">Terms of Service</a>.</p>
+			</div>
+		</div>
+		<div class="policy policy--dashed">
+			<div class="policy__key">
+				<p class="group-num">04</p>
+				<h2 class="policy__title">Verification products</h2>
+				{{ chip("Coming soon") }}
+			</div>
+			<div class="policy__body">
+				<p class="policy__lead">GhostVerify services will require appropriate authorization, consent, and carrier access controls where applicable.</p>
+				<a class="link-arrow" href="/products/ghostverify/">About GhostVerify{{ arrow() }}</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+{%- set cta = {
+	spaced: true,
+	label: "Contact",
+	title: "Security and privacy inquiries.",
+	text: "For security or privacy inquiries, contact xGO through the contact page.",
+	primary: { label: "Contact xGO", href: "/contact/" },
+	secondary: { label: "View Data Coverage", href: "/coverage/" }
+} %}
+{%- include "partials/cta-card.njk" %}

@@ -1,0 +1,101 @@
+---
+layout: layouts/base.njk
+title: "FAQ"
+description: "Answers to common questions about xGO phone intelligence: what the lookups return, data coverage, integration, access, and the GhostVerify verification family in development."
+---
+{%- from "partials/macros.njk" import arrow, dot, chip, ghost %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Resources" }] %}
+		{%- set crumbCurrent = "FAQ" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair pair--end page-hero__grid">
+			<div class="pair__copy pair__copy--main">
+				<p class="label label--ink">FAQ</p>
+				<h1 id="page-title" class="h1 h1--xl">Frequently asked questions.</h1>
+			</div>
+			<nav class="pair__visual pair__visual--aside index" aria-label="FAQ topics">
+				<p class="label index__title">Topics</p>
+				<a class="index__link" href="#about"><span>About xGO</span><span class="index__num">01</span></a>
+				<a class="index__link" href="#data"><span>Data &amp; lookups</span><span class="index__num">02</span></a>
+				<a class="index__link" href="#integration"><span>Integration &amp; access</span><span class="index__num">03</span></a>
+				<a class="index__link" href="#ghostverify"><span>GhostVerify</span>{{ chip("Coming soon", "chip--sm", true) }}</a>
+			</nav>
+		</div>
+	</div>
+</section>
+
+<section id="about" class="section section--group section--line" aria-labelledby="g-about">
+	<div class="wrap split">
+		<div class="split__label split__label--stack">
+			<p class="group-num">01 / 04</p>
+			<h2 id="g-about" class="h2--group">About xGO</h2>
+			<a class="link-arrow" href="/products/">Explore products{{ arrow() }}</a>
+		</div>
+		<dl class="faq faq--flush split__body">
+			<div class="faq__item"><dt class="faq__q">What is xGO?</dt><dd class="faq__a">xGO provides phone intelligence APIs that help businesses enrich existing phone numbers with available caller-name, carrier, and routing information.</dd></div>
+			<div class="faq__item"><dt class="faq__q">Does xGO find someone's phone number?</dt><dd class="faq__a">No. xGO enriches phone numbers you already have. It does not search for a person's number.</dd></div>
+			<div class="faq__item"><dt class="faq__q">What is phone enrichment?</dt><dd class="faq__a">Phone enrichment adds information to an existing phone number, such as caller ID name, carrier-related details, and routing information.</dd></div>
+		</dl>
+	</div>
+</section>
+
+<section id="data" class="section section--group section--line section--mist" aria-labelledby="g-data">
+	<div class="wrap split">
+		<div class="split__label split__label--stack">
+			<p class="group-num">02 / 04</p>
+			<h2 id="g-data" class="h2--group">Data &amp; lookups</h2>
+			<a class="link-arrow" href="/coverage/">See data coverage{{ arrow() }}</a>
+		</div>
+		<dl class="faq faq--flush split__body">
+			<div class="faq__item"><dt class="faq__q">What is CNAM?</dt><dd class="faq__a">CNAM is Caller ID Name information associated with a phone number.</dd></div>
+			<div class="faq__item"><dt class="faq__q">Does CNAM identify the verified owner of a number?</dt><dd class="faq__a">No. CNAM provides caller-name information, not verified subscriber ownership.</dd></div>
+			<div class="faq__item"><dt class="faq__q">What is an LRN?</dt><dd class="faq__a">An LRN is a Location Routing Number used in telecommunications routing.</dd></div>
+			<div class="faq__item"><dt class="faq__q">Can xGO verify whether a phone number is active?</dt><dd class="faq__a">No. The current lookup products do not verify whether a number is in service.</dd></div>
+			<div class="faq__item"><dt class="faq__q">Can xGO identify mobile, landline, or VoIP numbers?</dt><dd class="faq__a">No. Line type is not part of the current lookup products.</dd></div>
+		</dl>
+	</div>
+</section>
+
+<section id="integration" class="section section--group section--line" aria-labelledby="g-integration">
+	<div class="wrap split">
+		<div class="split__label split__label--stack">
+			<p class="group-num">03 / 04</p>
+			<h2 id="g-integration" class="h2--group">Integration &amp; access</h2>
+			<a class="link-arrow" href="/developers/">View documentation{{ arrow() }}</a>
+		</div>
+		<dl class="faq faq--flush split__body">
+			<div class="faq__item"><dt class="faq__q">Does xGO offer a REST API?</dt><dd class="faq__a">Yes. xGO products are accessed through REST lookups that return structured responses you can map into your own systems.</dd></div>
+			<div class="faq__item"><dt class="faq__q">Can I enrich large phone lists?</dt><dd class="faq__a">Yes, through API-based workflows. Contact us about bulk processing and file delivery options for larger datasets.</dd></div>
+			<div class="faq__item"><dt class="faq__q">How do I get access?</dt><dd class="faq__a">Request API access through the <a href="/contact/">contact page</a>. Tell us which products you're interested in and how you plan to use them, and we'll follow up with next steps.</dd></div>
+		</dl>
+	</div>
+</section>
+
+<section id="ghostverify" class="section section--group section--line" aria-labelledby="g-ghost">
+	<div class="wrap split">
+		<div class="split__label split__label--stack">
+			<p class="group-num">04 / 04</p>
+			<h2 id="g-ghost" class="h2--group">{{ ghost("sm") }}GhostVerify</h2>
+			{{ chip("Coming soon") }}
+			<a class="link-arrow" href="/products/ghostverify/">About GhostVerify{{ arrow() }}</a>
+		</div>
+		<dl class="faq faq--flush faq--dashed split__body">
+			<div class="faq__item faq__item--dashed"><dt class="faq__q">What is GhostVerify?</dt><dd class="faq__a">GhostVerify is a planned product family combining silent phone-number verification and SIM swap intelligence.</dd></div>
+			<div class="faq__item faq__item--dashed"><dt class="faq__q">Is GhostVerify available today?</dt><dd class="faq__a">GhostVerify is in development and is not yet generally available. You can join the early-access list for updates.</dd></div>
+			<div class="faq__item faq__item--dashed"><dt class="faq__q">What is Silent Number Verification?</dt><dd class="faq__a">It is a carrier-supported process that verifies phone-number possession through an authorized device or SIM session without requiring an SMS verification code.</dd></div>
+			<div class="faq__item faq__item--dashed"><dt class="faq__q">What is SIM Swap Intelligence?</dt><dd class="faq__a">It is information about recent changes to the SIM association of a mobile number.</dd></div>
+			<div class="faq__item faq__item--dashed"><dt class="faq__q">Can SIM Swap Intelligence prove fraud?</dt><dd class="faq__a">No. It provides a signal that can support a broader fraud assessment.</dd></div>
+		</dl>
+	</div>
+</section>
+
+{%- set cta = {
+	spaced: true,
+	title: "Still have questions?",
+	text: "Contact xGO or request API access and we'll get back to you.",
+	primary: { label: "Get API Access", href: "/contact/" },
+	secondary: { label: "Contact xGO", href: "/contact/" }
+} %}
+{%- include "partials/cta-card.njk" %}

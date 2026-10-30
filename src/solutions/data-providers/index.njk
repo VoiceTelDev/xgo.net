@@ -1,0 +1,113 @@
+---
+layout: layouts/base.njk
+title: "Data Providers & Enrichment Platforms"
+description: "Add specialized caller-name, carrier, and routing intelligence to your enrichment products. Individual APIs, combined responses, volume access, and distribution partnerships with xGO."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Solutions", href: "/solutions/" }] %}
+		{%- set crumbCurrent = "Data Providers & Enrichment Platforms" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair page-hero__grid">
+			<div class="pair__copy pair__copy--wide">
+				<p class="label label--ink">Data Providers &amp; Enrichment Platforms</p>
+				<h1 id="page-title" class="h1">Expand your enrichment offering with phone intelligence.</h1>
+				<p class="lede--hero">Give your customers more information about the numbers they already have.</p>
+				<p class="text">xGO provides specialized caller-name, carrier, and routing data that can complement your existing enrichment products.</p>
+				<div class="actions actions--mt">
+					<a class="btn btn--ink" href="/contact/">Become a Partner</a>
+					<a class="btn btn--line" href="/products/">Explore Products</a>
+				</div>
+			</div>
+			<figure class="pair__visual panel panel--flat table-card--shadow" aria-hidden="true">
+				<div class="panel__head panel__head--tint">
+					<p class="panel__title">Your enrichment product</p>
+					<p class="label">Illustrative</p>
+				</div>
+				<div class="panel__section">
+					<p class="label">Your existing data</p>
+					<div class="bars">
+						<div class="bars__row"><div class="bar bar--22"></div><div class="bar bar--soft bar--48"></div></div>
+						<div class="bars__row"><div class="bar bar--30"></div><div class="bar bar--soft bar--36"></div></div>
+						<div class="bars__row"><div class="bar bar--18"></div><div class="bar bar--soft bar--54"></div></div>
+					</div>
+				</div>
+				<div class="panel__section panel__section--added">
+					<p class="label label--signal">Phone intelligence from <span class="brand">xGO</span></p>
+					<ul class="mini-list">
+						<li class="mini-list__item"><span class="mini-list__name">{{ dot("dot--9") }}Caller-name enrichment</span><span class="mini-list__code">caller_name</span></li>
+						<li class="mini-list__item"><span class="mini-list__name">{{ dot("dot--9") }}Carrier intelligence</span><span class="mini-list__code">carrier</span></li>
+						<li class="mini-list__item"><span class="mini-list__name">{{ dot("dot--9") }}Routing and portability context</span><span class="mini-list__code">routing</span></li>
+					</ul>
+				</div>
+			</figure>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="built-title">
+	<div class="wrap split">
+		<p class="label split__label">Built for data businesses</p>
+		<div class="split__body">
+			<h2 id="built-title" class="h2">Your customers don't want more disconnected datasets.</h2>
+			<p class="lede--md mt-md">They want useful information that fits into the workflows they already use.</p>
+			<p class="text-md measure mt-sm">xGO makes it easier to add specialized phone intelligence to your existing products and services.</p>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="offer-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">What you can offer</p>
+			<h2 id="offer-title" class="h2 split__body">Add another layer of phone intelligence.</h2>
+		</div>
+		<div class="grid cases">
+			<div class="case">
+				<p class="card__code">{{ dot() }}caller_name</p>
+				<h3 class="case__title">Caller-name enrichment</h3>
+				<p class="text-sm">Add available caller ID names to phone records.</p>
+			</div>
+			<div class="case">
+				<p class="card__code">{{ dot() }}carrier</p>
+				<h3 class="case__title">Carrier intelligence</h3>
+				<p class="text-sm">Provide supported carrier-related information.</p>
+			</div>
+			<div class="case">
+				<p class="card__code">{{ dot() }}routing</p>
+				<h3 class="case__title">Routing and portability context</h3>
+				<p class="text-sm">Add specialized telecommunications fields to customer datasets.</p>
+			</div>
+			<div class="case">
+				<p class="card__code">{{ dot() }}all fields</p>
+				<h3 class="case__title">Combined phone enrichment</h3>
+				<p class="text-sm">Offer multiple data fields through a unified integration.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="int-title">
+	<div class="wrap split">
+		<p class="label split__label">Integration options</p>
+		<div class="split__body">
+			<h2 id="int-title" class="h2">Choose how you work with xGO.</h2>
+			<ol class="numbered">
+				<li class="numbered__item"><span class="numbered__num">01</span><span class="numbered__text">Individual API products</span></li>
+				<li class="numbered__item"><span class="numbered__num">02</span><span class="numbered__text">Combined enrichment responses</span></li>
+				<li class="numbered__item"><span class="numbered__num">03</span><span class="numbered__text">Volume-based access</span></li>
+				<li class="numbered__item"><span class="numbered__num">04</span><span class="numbered__text">Wholesale and distribution partnerships</span></li>
+			</ol>
+		</div>
+	</div>
+</section>
+
+{%- set cta = {
+	title: "Add xGO to your data stack.",
+	text: "Contact our partnerships team.",
+	primary: { label: "Become a Partner", href: "/contact/" },
+	secondary: { label: "Explore Products", href: "/products/" }
+} %}
+{%- include "partials/cta-card.njk" %}

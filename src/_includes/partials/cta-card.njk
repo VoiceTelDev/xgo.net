@@ -1,0 +1,24 @@
+{#- Closing CTA card. Set `cta` = { title, text, primary: {label, href}, secondary?: {label, href}, label?, theme?: "signal", spaced?: true } -#}
+{%- set signal = cta.theme == "signal" %}
+<section class="section section--cta{% if cta.spaced %} section--cta-spaced{% endif %}" aria-labelledby="cta-title">
+	<div class="wrap">
+		<div class="cta-card{% if signal %} cta-card--signal{% endif %}">
+			<div class="cta-card__copy">
+				{%- set symbolWidth = 44 %}
+				{%- set symbolClass = "symbol--paper" if signal else "" %}
+				{%- include "partials/symbol.njk" %}
+				{%- if cta.label %}
+				<p class="label cta-card__label">{{ cta.label }}</p>
+				{%- endif %}
+				<h2 id="cta-title" class="cta-card__title">{{ cta.title }}</h2>
+				<p class="cta-card__text">{{ cta.text }}</p>
+			</div>
+			<div class="actions">
+				<a class="btn {{ "btn--ink" if signal else "btn--signal" }}" href="{{ cta.primary.href }}">{{ cta.primary.label }}</a>
+				{%- if cta.secondary %}
+				<a class="btn {{ "btn--line-ink" if signal else "btn--line-dark" }}" href="{{ cta.secondary.href }}">{{ cta.secondary.label }}</a>
+				{%- endif %}
+			</div>
+		</div>
+	</div>
+</section>

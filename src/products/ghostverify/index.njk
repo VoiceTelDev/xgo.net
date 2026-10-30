@@ -1,0 +1,199 @@
+---
+layout: layouts/base.njk
+title: "GhostVerify | Phone Verification & SIM Swap Intelligence"
+description: "GhostVerify is a product family in development: silent phone-number verification and SIM swap intelligence for authentication, account recovery, and fraud prevention workflows. Join the early-access list."
+---
+{%- from "partials/macros.njk" import arrow, chevron, dot, chip, ghost %}
+
+<section class="page-hero page-hero--crumbs section--ink" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Products", href: "/products/" }] %}
+		{%- set crumbCurrent = "GhostVerify" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair page-hero__grid">
+			<div class="pair__copy pair__copy--main">
+				<div class="gv-mark">
+					<span class="gv-mark__brand">{{ ghost() }}<span class="gv-mark__name gv-mark__name--lg">GhostVerify</span></span>
+					{{ chip("Coming soon") }}
+				</div>
+				<h1 id="page-title" class="h1 h1--lg">Verify the number. Understand the risk.</h1>
+				<p class="lede--hero">Carrier-powered phone verification and SIM change intelligence.</p>
+				<p class="text measure">GhostVerify is a new product family being developed to help businesses verify phone-number possession and identify recent SIM changes. Bring stronger phone intelligence into authentication, account recovery, and fraud prevention workflows.</p>
+				<div class="actions actions--mt">
+					<a class="btn btn--signal" href="#early-access">Join Early Access</a>
+					<a class="btn btn--line-dark" href="/contact/">Contact Sales</a>
+				</div>
+			</div>
+			<div class="pair__visual art hide-sm" aria-hidden="true">
+				{{ ghost("xl") }}
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section" aria-labelledby="signals-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">The signals</p>
+			<h2 id="signals-title" class="h2 split__body">Two signals. A more complete picture.</h2>
+		</div>
+		<div class="grid grid--420 mt-lg">
+			<div class="dash-card dash-card--stack dash-card--lg">
+				{{ dot("dot--12 dot--hollow") }}
+				<h3 class="dash-card__title dash-card__title--lg">Silent Number Verification</h3>
+				<p class="text">Confirm that a mobile number is associated with the device or SIM participating in an authorized authentication session.</p>
+				<p class="card__lead">No SMS code required.</p>
+			</div>
+			<div class="dash-card dash-card--stack dash-card--lg">
+				{{ dot("dot--12 dot--hollow") }}
+				<h3 class="dash-card__title dash-card__title--lg">SIM Swap Intelligence</h3>
+				<p class="text">Check whether a mobile number has experienced a recent SIM change.</p>
+				<p class="text">Retrieve the latest available SIM change information to help identify events that may warrant additional verification.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="together-title">
+	<div class="wrap pair pair--end">
+		<div class="pair__copy stack--md">
+			<p class="label">GhostVerify Complete</p>
+			<h2 id="together-title" class="h2">Why use them together?</h2>
+			<p class="text-md">Possession verification can establish that a device currently controls a number.</p>
+			<p class="text-md">But a recent SIM change may provide important additional context.</p>
+			<p class="text-md strong">GhostVerify is designed to combine these signals so businesses can make more informed authentication decisions.</p>
+		</div>
+		<div class="pair__visual combine-box combine-box--dashed" aria-hidden="true">
+			<div class="combine">
+				<div class="combine__inputs">
+					<span class="combine__chip combine__chip--dashed"><span class="dot dot--hollow"></span>Possession</span>
+					<span class="combine__chip combine__chip--dashed"><span class="dot dot--hollow"></span>Recent SIM change</span>
+				</div>
+				<svg class="combine__lines combine__lines--dashed" viewBox="0 0 56 100"><path d="M0 22.5H28M0 78.5H28M28.5 22.5V79M28 50.5H56"/></svg>
+				<div class="combine__out">
+					<span class="dot dot--14"></span>
+					<span class="combine__label">
+						<span class="combine__name">Your decision</span>
+						<span class="combine__meta">authentication · fraud</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="family-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">The product family</p>
+			<h2 id="family-title" class="h2 split__body">Silent, SIM, and Complete.</h2>
+		</div>
+		<div class="grid grid--280 mt-lg">
+			<div class="dash-card dash-card--stack dash-card--family">
+				<p class="label">In development</p>
+				<h3 class="dash-card__title dash-card__title--md">GhostVerify Silent</h3>
+				<p class="card__lead">Verify phone numbers without sending an SMS code.</p>
+				<p class="card__text">Confirm phone-number possession using participating mobile carrier networks.</p>
+			</div>
+			<div class="dash-card dash-card--stack dash-card--family">
+				<p class="label">In development</p>
+				<h3 class="dash-card__title dash-card__title--md">GhostVerify SIM</h3>
+				<p class="card__lead">Know when a phone number last changed SIMs.</p>
+				<p class="card__text">Carrier-derived SIM change information to identify events that may require additional verification.</p>
+			</div>
+			<div class="dash-card dash-card--stack dash-card--family">
+				<p class="label">In development</p>
+				<h3 class="dash-card__title dash-card__title--md">GhostVerify Complete</h3>
+				<p class="card__lead">Verify possession. Check for recent SIM changes.</p>
+				<p class="card__text">Silent phone verification and SIM swap intelligence in one coordinated workflow.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="trust-title">
+	<div class="wrap split">
+		<p class="label split__label">Use cases</p>
+		<div class="split__body">
+			<h2 id="trust-title" class="h2">Built for high-trust workflows.</h2>
+			<dl class="faq faq--uses">
+				<div class="faq__item"><dt class="faq__q">Account registration</dt><dd class="faq__a">Verify mobile-number possession with less friction.</dd></div>
+				<div class="faq__item"><dt class="faq__q">Account recovery</dt><dd class="faq__a">Check for recent SIM changes before allowing sensitive account changes.</dd></div>
+				<div class="faq__item"><dt class="faq__q">Financial transactions</dt><dd class="faq__a">Add carrier-derived signals to existing transaction risk assessments.</dd></div>
+				<div class="faq__item"><dt class="faq__q">Identity platforms</dt><dd class="faq__a">Integrate phone possession and SIM change data into verification workflows.</dd></div>
+			</dl>
+		</div>
+	</div>
+</section>
+
+<section id="early-access" class="section section--ink" aria-labelledby="ea-title">
+	<div class="wrap pair pair--top pair--form">
+		<div class="pair__copy pair__copy--narrow">
+			<p class="label">Early access</p>
+			<h2 id="ea-title" class="h2">Be first to explore GhostVerify.</h2>
+			<p class="text-md">Join the early-access list to receive product availability updates.</p>
+			<p class="note note--rule">GhostVerify is in development. Availability depends on participating carrier networks and supported integrations.</p>
+		</div>
+		<div class="form-card" data-form-box>
+			<form class="form" method="post" action="{{ site.forms.earlyAccess or '#early-access' }}" data-form data-endpoint="{{ site.forms.earlyAccess }}" novalidate>
+				<div class="field">
+					<label class="field__label" for="g-name">Name</label>
+					<input class="input" id="g-name" name="name" type="text" autocomplete="name" required>
+				</div>
+				<div class="field">
+					<label class="field__label" for="g-email">Work email</label>
+					<input class="input" id="g-email" name="email" type="email" autocomplete="email" required>
+				</div>
+				<div class="field">
+					<label class="field__label" for="g-company">Company</label>
+					<input class="input" id="g-company" name="company" type="text" autocomplete="organization" required>
+				</div>
+				<div class="field">
+					<label class="field__label" for="g-country">Country</label>
+					<input class="input" id="g-country" name="country" type="text" autocomplete="country-name">
+				</div>
+				<div class="field">
+					<label class="field__label" for="g-product">Product interest</label>
+					<div class="select-wrap">
+						<select class="input" id="g-product" name="product" required>
+							<option value="">Select a product</option>
+							<option>GhostVerify Silent</option>
+							<option>GhostVerify SIM</option>
+							<option>GhostVerify Complete</option>
+						</select>
+						{{ chevron() }}
+					</div>
+				</div>
+				<div class="field">
+					<label class="field__label" for="g-volume">Expected verification volume</label>
+					<div class="select-wrap">
+						<select class="input" id="g-volume" name="volume">
+							<option value="">Select a range</option>
+							<option>Fewer than 10,000</option>
+							<option>10,000–100,000</option>
+							<option>100,000–1 million</option>
+							<option>More than 1 million</option>
+							<option>Not sure yet</option>
+						</select>
+						{{ chevron() }}
+					</div>
+				</div>
+				<div class="field field--full">
+					<label class="field__label" for="g-use">Use case</label>
+					<textarea class="input" id="g-use" name="use_case" rows="4" required></textarea>
+				</div>
+				<p class="form__error" data-form-error role="alert" tabindex="-1" hidden></p>
+				<div class="form__actions">
+					<button class="btn btn--ink" type="submit">Join Early Access</button>
+					<p class="form__note">We'll only use this to share GhostVerify availability updates.</p>
+				</div>
+			</form>
+			<div class="form-sent" data-sent-view role="status" tabindex="-1" hidden>
+				{{ ghost("lg") }}
+				<p class="form-sent__title">You're on the early-access list.</p>
+				<p class="text measure-sm">We'll share product availability updates using the contact information you provided.</p>
+				<div class="mt-xs"><button class="btn btn--line" type="button" data-action="reset">Back to the form</button></div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -29,10 +29,12 @@ jobs:
         run: npm ci
 
       - name: Quality checks
+        # XGO_STAGING=1 keeps the coming-soon page at / and stages the new site at /new/ with
+        # noindex. Delete the variable to launch the real homepage at /.
         run: |
           npm run format:check
           npm run lint
-          npm run build
+          XGO_STAGING=1 npm run build
           npm run lint:html
           npm run test:coverage
 

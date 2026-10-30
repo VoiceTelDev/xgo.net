@@ -1,0 +1,128 @@
+---
+layout: layouts/base.njk
+title: "About"
+description: "xGO is a phone intelligence platform that turns specialized telecommunications information into accessible data products for enrichment, analysis, and better decision-making."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="page-hero" aria-labelledby="page-title">
+	<div class="wrap">
+		<p class="label">About <span class="brand">xGO</span></p>
+		<h1 id="page-title" class="h1 h1--display mt-md">We make phone data more useful.</h1>
+		<div class="intro">
+			<p class="lede--md">xGO is a phone intelligence platform focused on helping businesses understand more about the numbers in their systems.</p>
+			<p class="text-md">We turn specialized telecommunications information into accessible data products that support enrichment, analysis, and better decision-making.</p>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="purpose-title">
+	<div class="wrap split">
+		<p class="label split__label">Our purpose</p>
+		<div class="split__body">
+			<h2 id="purpose-title" class="h2">Better decisions start with better information.</h2>
+			<p class="lede--xl mt-xl">Phone numbers appear everywhere.</p>
+			<div class="tags" aria-hidden="true">
+				<span class="tag tag--lg">{{ dot("dot--7") }}customer records</span>
+				<span class="tag tag--lg">{{ dot("dot--7") }}account registration</span>
+				<span class="tag tag--lg">{{ dot("dot--7") }}sales databases</span>
+				<span class="tag tag--lg">{{ dot("dot--7") }}business operations</span>
+			</div>
+			<div class="stack stack--md measure-lg mt-md">
+				<p class="text-md">They're stored in customer records, used during account registration, included in sales databases, and relied on throughout business operations.</p>
+				<p class="text-md">Yet the information behind those numbers is often difficult to access or understand.</p>
+				<p class="text-md strong">xGO exists to make that information more useful.</p>
+				<p class="text-md">We bring telecommunications intelligence into the applications and workflows businesses already use.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="bg-title">
+	<div class="wrap split">
+		<p class="label split__label">Our background</p>
+		<div class="split__body">
+			<h2 id="bg-title" class="h2">Built on telecommunications expertise.</h2>
+			<div class="grid grid--260 grid--gap-md mt-md">
+				<p class="text-md">The technology behind xGO draws on established experience in telecommunications data, carrier systems, and network operations.</p>
+				<p class="text-md">That background gives us a practical understanding of the information available behind phone numbers and how businesses can use it.</p>
+			</div>
+			<p class="lede--md rule-top">Our focus is straightforward: make specialized phone intelligence easier to access through modern data products and APIs.</p>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="believe-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">Our principles</p>
+			<h2 id="believe-title" class="h2 split__body">What we believe.</h2>
+		</div>
+		<div class="grid cases">
+			<div class="case">
+				<p class="case__num">01</p>
+				<h3 class="case__title">Useful data should be accessible.</h3>
+				<p class="text-sm">Businesses shouldn't need deep telecommunications expertise to understand the data behind a phone number.</p>
+			</div>
+			<div class="case">
+				<p class="case__num">02</p>
+				<h3 class="case__title">Clear information builds trust.</h3>
+				<p class="text-sm">We believe customers should understand what each data product returns, what it can tell them, and where its limitations begin.</p>
+			</div>
+			<div class="case">
+				<p class="case__num">03</p>
+				<h3 class="case__title">Good products solve real problems.</h3>
+				<p class="text-sm">We focus on data that can improve enrichment workflows, support investigations, and make existing systems more useful.</p>
+			</div>
+			<div class="case">
+				<p class="case__num">04</p>
+				<h3 class="case__title">Better intelligence creates better opportunities.</h3>
+				<p class="text-sm">From contact enrichment to emerging verification technologies, we're building tools that help businesses make more informed decisions.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--ink" aria-labelledby="do-title">
+	<div class="wrap pair pair--top">
+		<div class="pair__copy">
+			<p class="label">What we do</p>
+			<h2 id="do-title" class="h2">Specialized phone intelligence, made practical.</h2>
+			<p class="text-md">xGO provides APIs for accessing available caller-name, carrier, and routing information.</p>
+			<p class="text-md">As network-based verification technology evolves, we're exploring new ways to make carrier-derived identity and security signals more accessible.</p>
+		</div>
+		<div class="pair__visual">
+			<p class="label list-head">Our products are designed for</p>
+			<ul class="returns returns--dark">
+				<li class="returns__item">{{ dot() }}Data enrichment platforms</li>
+				<li class="returns__item">{{ dot() }}Developers and software companies</li>
+				<li class="returns__item">{{ dot() }}Sales and revenue operations teams</li>
+				<li class="returns__item">{{ dot() }}Telecommunications applications</li>
+				<li class="returns__item">{{ dot() }}Fraud prevention and identity platforms</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="section" aria-labelledby="approach-title">
+	<div class="wrap split">
+		<p class="label split__label">Our approach</p>
+		<div class="split__body">
+			<h2 id="approach-title" class="h2 h2--stack"><span>Focused.</span><span>Practical.</span><span class="text-slate">Built for integration.</span></h2>
+			<div class="grid grid--250 grid--gap-md rule-top rule-top--lg">
+				<p class="text">We believe phone intelligence should fit naturally into existing systems.</p>
+				<p class="text">That means clear product definitions, structured data, and straightforward integration options.</p>
+				<p class="text">Whether you're enriching a CRM record or building a specialized data product, our goal is to help you get the information you need and put it to work.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+{%- set cta = {
+	theme: "signal",
+	title: "Let's make your phone data more useful.",
+	text: "Explore our products or talk with us about your data requirements.",
+	primary: { label: "Explore Products", href: "/products/" },
+	secondary: { label: "Contact xGO", href: "/contact/" }
+} %}
+{%- include "partials/cta-card.njk" %}

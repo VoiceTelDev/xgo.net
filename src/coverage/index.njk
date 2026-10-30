@@ -1,0 +1,100 @@
+---
+layout: layouts/base.njk
+title: "Data Coverage"
+description: "What xGO lookups can and cannot tell you: supported data types, the North American Numbering Plan footprint, and the coverage considerations for each product."
+---
+{%- from "partials/macros.njk" import arrow, dot, chip %}
+
+<section class="page-hero page-hero--crumbs" aria-labelledby="page-title">
+	<div class="wrap">
+		{%- set crumbs = [{ label: "Resources" }] %}
+		{%- set crumbCurrent = "Data Coverage" %}
+		{%- include "partials/crumbs.njk" %}
+		<div class="pair pair--end page-hero__grid">
+			<div class="pair__copy pair__copy--main">
+				<p class="label label--ink">Data coverage</p>
+				<h1 id="page-title" class="h1 h1--xl">Know what your lookup can tell you.</h1>
+				<p class="lede--hero measure">Phone intelligence is only useful when you understand what the data represents.</p>
+				<p class="text measure">Explore xGO's supported data types, geographic scope, and important coverage considerations.</p>
+			</div>
+			<div class="pair__aside card">
+				<p class="label">Geographic coverage</p>
+				<p class="big-mono">+1</p>
+				<p class="lede--sm">xGO's initial phone intelligence products are focused on the North American Numbering Plan.</p>
+				<p class="card__text card__text--sm">Specific field availability can vary by number, data source, and product.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line section--mist" aria-labelledby="table-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">By product</p>
+			<h2 id="table-title" class="h2 split__body">Data coverage by product.</h2>
+		</div>
+		<div class="table-card mt-lg">
+			<div class="table-card__scroll">
+				<table class="cov-table" aria-labelledby="table-title">
+					<thead>
+						<tr>
+							<th scope="col" class="cov-table__th label label--ink">Product</th>
+							<th scope="col" class="cov-table__th label label--ink">Initial geography</th>
+							<th scope="col" class="cov-table__th label label--ink">Coverage considerations</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" class="cov-table__td cov-table__product"><a class="cov-table__link" href="/products/caller-name-lookup/">Caller Name Lookup</a></th>
+							<td class="cov-table__td"><span class="cov-table__geo">{{ dot() }}NANP numbers</span></td>
+							<td class="cov-table__td cov-table__note">Caller-name records may be missing or outdated</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cov-table__td cov-table__product"><a class="cov-table__link" href="/products/carrier-lookup/">Carrier Lookup</a></th>
+							<td class="cov-table__td"><span class="cov-table__geo">{{ dot() }}NANP numbers</span></td>
+							<td class="cov-table__td cov-table__note">Available identifiers depend on lookup response</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cov-table__td cov-table__product"><a class="cov-table__link" href="/products/lrn-lookup/">LRN Lookup</a></th>
+							<td class="cov-table__td"><span class="cov-table__geo">{{ dot() }}NANP numbers</span></td>
+							<td class="cov-table__td cov-table__note">Requires supported routing data</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cov-table__td cov-table__product"><a class="cov-table__link" href="/products/ghostverify/">GhostVerify</a>{{ chip("Coming soon", "chip--sm", true) }}</th>
+							<td class="cov-table__td"><span class="cov-table__geo text-slate">{{ dot("dot--hollow") }}Carrier-dependent</span></td>
+							<td class="cov-table__td cov-table__note">Requires participating networks and eligible devices</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="legend">
+			<span class="legend-item">{{ dot() }}Initial coverage defined</span>
+			<span class="legend-item">{{ dot("dot--hollow") }}In development</span>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="not-title">
+	<div class="wrap split">
+		<p class="label split__label">Limitations</p>
+		<div class="split__body">
+			<h2 id="not-title" class="h2">What xGO data does not establish.</h2>
+			<ul class="limits">
+				<li class="limits__item">{{ dot("dot--ink") }}<span class="limits__text">Caller-name information does not establish legal ownership.</span></li>
+				<li class="limits__item">{{ dot("dot--ink") }}<span class="limits__text">LRN information does not prove a number is active.</span></li>
+				<li class="limits__item">{{ dot("dot--ink") }}<span class="limits__text">Carrier routing information does not necessarily identify a phone's line type.</span></li>
+				<li class="limits__item">{{ dot("dot--ink") }}<span class="limits__text">Silent verification requires an authorized user-device authentication flow.</span>{{ chip("Coming soon", "chip--sm", true) }}</li>
+				<li class="limits__item">{{ dot("dot--ink") }}<span class="limits__text">SIM change intelligence is subject to carrier coverage and available history.</span>{{ chip("Coming soon", "chip--sm", true) }}</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+{%- set cta = {
+	title: "Have a specific coverage requirement?",
+	text: "Contact us to discuss your use case.",
+	primary: { label: "Contact xGO", href: "/contact/" },
+	secondary: { label: "Explore Products", href: "/products/" }
+} %}
+{%- include "partials/cta-card.njk" %}

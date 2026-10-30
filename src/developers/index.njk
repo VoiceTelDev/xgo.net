@@ -1,0 +1,134 @@
+---
+layout: layouts/base.njk
+title: "Developers"
+description: "Bring caller-name, carrier, and routing data into your application through structured REST APIs. Review the illustrative response and the fields each xGO product returns."
+---
+{%- from "partials/macros.njk" import arrow, dot %}
+
+<section class="section section--ink" aria-labelledby="page-title">
+	<div class="wrap pair">
+		<div class="pair__copy pair__copy--main">
+			<p class="label">Developers</p>
+			<h1 id="page-title" class="h1 h1--xl">Phone intelligence for developers.</h1>
+			<p class="lede measure">Bring caller-name, carrier, and routing data into your application through structured APIs.</p>
+			<p class="text measure">Explore available products, review response fields, and integrate the information your application needs.</p>
+			<div class="actions">
+				<a class="btn btn--signal" href="#response">View API Documentation</a>
+				<a class="btn btn--line-dark" href="/contact/">Get API Access</a>
+			</div>
+		</div>
+		<nav class="dev-index" aria-label="Products and fields">
+			<div class="dev-index__head">
+				<p class="label">Product</p>
+				<p class="label">Returns</p>
+			</div>
+			<a class="drow" href="/products/caller-name-lookup/"><span class="drow__name">Caller Name Lookup</span><span class="drow__code">caller_name</span></a>
+			<a class="drow" href="/products/carrier-lookup/"><span class="drow__name">Carrier Lookup</span><span class="drow__code">carrier · routing</span></a>
+			<a class="drow" href="/products/lrn-lookup/"><span class="drow__name">LRN Lookup</span><span class="drow__code">routing.lrn</span></a>
+			<a class="drow" href="/products/phone-enrichment/"><span class="drow__name">{{ dot("dot--9") }}Phone Enrichment</span><span class="drow__code">all of the above</span></a>
+		</nav>
+	</div>
+</section>
+
+<section class="section" aria-labelledby="build-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">Build with xGO</p>
+			<h2 id="build-title" class="h2 split__body">Built to fit your workflow.</h2>
+		</div>
+		<div class="grid cases">
+			<div class="case">
+				<p class="case__num">01</p>
+				<h3 class="case__title">REST-based access</h3>
+				<p class="text-sm">Integrate phone intelligence into existing services and workflows.</p>
+			</div>
+			<div class="case">
+				<p class="case__num">02</p>
+				<h3 class="case__title">Structured responses</h3>
+				<p class="text-sm">Map returned fields into your own data model.</p>
+			</div>
+			<div class="case">
+				<p class="case__num">03</p>
+				<h3 class="case__title">Specialized lookups</h3>
+				<p class="text-sm">Use individual products for caller names, carrier information, and LRN.</p>
+			</div>
+			<div class="case">
+				<p class="case__num">04</p>
+				<h3 class="case__title">Combined enrichment</h3>
+				<p class="text-sm">Retrieve every supported data type through one Phone Enrichment lookup.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="response" class="section section--line section--mist" aria-labelledby="resp-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">Example API response</p>
+			<div class="split__body">
+				<h2 id="resp-title" class="h2">See what a lookup returns.</h2>
+				<p class="lede measure">An illustrative xGO response for a combined Phone Enrichment lookup, with each field described.</p>
+			</div>
+		</div>
+		<div class="response">
+			<div class="response__code">
+				{%- set code = { name: "Phone Enrichment", label: "Illustrative xGO response" } %}
+				{%- include "partials/code-sample.njk" %}
+				<p class="caption mt-sm">Illustrative xGO response. Proposed wrapper, not an existing endpoint.</p>
+			</div>
+			<dl class="fields">
+				<div class="fields__head">
+					<dt class="label">Field</dt>
+					<dd class="label">Description</dd>
+				</div>
+				<div class="fields__row"><dt class="fields__key">phone_number</dt><dd class="fields__desc">The submitted phone number.</dd></div>
+				<div class="fields__row"><dt class="fields__key">caller_name.value</dt><dd class="fields__desc">Available caller ID name.</dd></div>
+				<div class="fields__row"><dt class="fields__key">caller_name.available</dt><dd class="fields__desc">Whether a caller ID name was returned.</dd></div>
+				<div class="fields__row"><dt class="fields__key">carrier.ocn</dt><dd class="fields__desc">Carrier identifier (Operating Company Number).</dd></div>
+				<div class="fields__row"><dt class="fields__key">routing.lrn</dt><dd class="fields__desc">Location Routing Number.</dd></div>
+				<div class="fields__row"><dt class="fields__key">routing.state</dt><dd class="fields__desc">State associated with the routing data.</dd></div>
+				<div class="fields__row"><dt class="fields__key">routing.lata</dt><dd class="fields__desc">Local Access and Transport Area.</dd></div>
+			</dl>
+		</div>
+	</div>
+</section>
+
+<section class="section section--line" aria-labelledby="start-title">
+	<div class="wrap">
+		<div class="split">
+			<p class="label split__label">Getting started</p>
+			<h2 id="start-title" class="h2 split__body">Four steps to your first lookup.</h2>
+		</div>
+		<ol class="grid steps steps--4">
+			<li class="step">
+				<span class="step__num">01</span>
+				<h3 class="step__title">Request access</h3>
+				<p class="step__text">Create an account or contact xGO for API credentials.</p>
+			</li>
+			<li class="step">
+				<span class="step__num">02</span>
+				<h3 class="step__title">Choose a product</h3>
+				<p class="step__text">Select the lookup that matches your use case.</p>
+			</li>
+			<li class="step">
+				<span class="step__num">03</span>
+				<h3 class="step__title">Make a request</h3>
+				<p class="step__text">Submit a supported phone number through the API.</p>
+			</li>
+			<li class="step">
+				<span class="step__num">04</span>
+				<h3 class="step__title">Use the response</h3>
+				<p class="step__text">Map returned fields into your application.</p>
+			</li>
+		</ol>
+		<div class="mt-lg"><a class="btn btn--ink" href="/contact/">Get API Access{{ arrow() }}</a></div>
+	</div>
+</section>
+
+{%- set cta = {
+	title: "Build phone intelligence into your applications.",
+	text: "Whether you're enriching a single record or processing large datasets, xGO is designed to make phone intelligence easier to access.",
+	primary: { label: "Get API Access", href: "/contact/" },
+	secondary: { label: "Contact Sales", href: "/contact/" }
+} %}
+{%- include "partials/cta-card.njk" %}
