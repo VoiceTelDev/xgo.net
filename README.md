@@ -16,7 +16,7 @@ npm run build    # writes _site/
 npm run quality  # format, lint (JS + CSS), build, HTML validation, tests with 100% coverage
 ```
 
-The deploy workflow runs the same gates before publishing, so a failing gate blocks a deploy.
+The CI workflow runs the same gates on every pull request and non-main push, in both production and staging build modes, and the Deploy workflow runs them again before publishing, so a failing gate blocks a deploy.
 
 ## Layout
 

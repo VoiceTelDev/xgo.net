@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Format and lint
+        run: |
+          npm run format:check
+          npm run lint
+
+      - name: Build and validate (production mode)
+        run: |
+          npm run build
+          npm run lint:html
+
+      - name: Build and validate (staging mode)
+        run: |
+          XGO_STAGING=1 npm run build
+          npm run lint:html
+
+      - name: Tests with coverage
+        run: npm run test:coverage
