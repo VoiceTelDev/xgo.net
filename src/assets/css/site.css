@@ -3680,6 +3680,27 @@ a.sol-card:hover {
 	padding-block: clamp(80px, 12vw, 160px);
 }
 
+/* Coming-soon page (staging mode only) */
+
+.coming-soon {
+	display: grid;
+	min-height: 100vh;
+	padding: 16px;
+	place-items: center;
+	text-align: center;
+}
+
+.coming-soon__title {
+	font-size: clamp(2.5rem, 8vw, 4.5rem);
+	letter-spacing: -0.03em;
+}
+
+.coming-soon__lede {
+	margin-top: 8px;
+	font-size: 1.25rem;
+	color: var(--slate);
+}
+
 /* Responsive utilities: kept last so they win over component display rules */
 
 @media (width <= 640px) {

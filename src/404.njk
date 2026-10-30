@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
 		<h1 id="page-title" class="h1 h1--xl mt-md">Page not found.</h1>
 		<p class="lede measure mt-md">The page you requested doesn't exist on {{ site.domain }}. It may have moved, or the address may have been mistyped.</p>
 		<div class="actions mt-md">
-			<a class="btn btn--ink" href="/">Back to home{{ arrow() }}</a>
+			<a class="btn btn--ink" href="{{ build.home }}">Back to home{{ arrow() }}</a>
 			<a class="btn btn--line" href="/products/">Explore Products</a>
 		</div>
 	</div>

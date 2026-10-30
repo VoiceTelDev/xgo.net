@@ -9,7 +9,7 @@
 		{%- set canonical = site.url ~ page.url -%}
 		<title>{{ fullTitle }}</title>
 		<meta name="description" content="{{ pageDescription }}">
-		{%- if noindex %}
+		{%- if noindex or build.staging %}
 		<meta name="robots" content="noindex, nofollow">
 		{%- endif %}
 		<link rel="canonical" href="{{ canonical }}">

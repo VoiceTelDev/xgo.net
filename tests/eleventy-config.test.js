@@ -89,4 +89,27 @@ describe("site build", () => {
 		expect(sitemap.content).not.toContain("404.html");
 		expect(sitemap.content).not.toContain("/terms/");
 	});
+
+	it("stages the site behind the coming-soon page when XGO_STAGING=1", async () => {
+		process.env.XGO_STAGING = "1";
+		try {
+			const elev = new Eleventy("src", "_site", {
+				quietMode: true,
+				configPath: "eleventy.config.js",
+			});
+			const pages = await elev.toJSON();
+			const home = pages.find((p) => p.url === "/");
+			const staged = pages.find((p) => p.url === "/new/");
+
+			expect(home.content).toContain("Coming soon.");
+			expect(home.content).not.toContain("site-header");
+			expect(staged.content).toContain('class="hero__title"');
+			expect(staged.content).toContain('<meta name="robots" content="noindex, nofollow">');
+			expect(staged.content).toContain('href="/new/" aria-label="xGO home"');
+			expect(pages.find((p) => p.url === "/sitemap.xml")).toBeUndefined();
+			expect(pages.find((p) => p.url === "/robots.txt").content).toContain("Disallow: /");
+		} finally {
+			delete process.env.XGO_STAGING;
+		}
+	});
 });

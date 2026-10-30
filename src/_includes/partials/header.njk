@@ -1,7 +1,7 @@
 {%- from "partials/macros.njk" import current -%}
 <header class="site-header">
 	<div class="wrap site-header__inner">
-		<a class="site-header__home" href="/" aria-label="{{ site.brand }} home">
+		<a class="site-header__home" href="{{ build.home }}" aria-label="{{ site.brand }} home">
 			{%- set logoWidth = 70 %}
 			{%- include "partials/logo.njk" %}
 		</a>

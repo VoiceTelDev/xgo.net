@@ -55,7 +55,17 @@ The contact form (`/contact/`) and the GhostVerify early-access form (`/products
 
 Without JavaScript the forms post to their own page, so the endpoint should also accept `application/x-www-form-urlencoded` if a no-JS fallback is wanted.
 
+## Staging mode
+
+The Deploy workflow currently builds with `XGO_STAGING=1`. In that mode the coming-soon page stays at `/`, the real homepage is served at `/new/`, every page carries `noindex, nofollow`, `robots.txt` disallows crawling, and no sitemap is written. All interior pages are live at their final URLs (for example `/products/`), just unlinked from `/`, so anyone with a URL can open them. To preview staging locally:
+
+```bash
+XGO_STAGING=1 npm run build && npx serve _site   # or any static server
+```
+
 ## Launch checklist
+
+- [ ] Delete `XGO_STAGING=1` from the build step in `.github/workflows/deploy.yml` so the real homepage is served at `/`, pages become indexable, and the sitemap is published.
 
 - [ ] Replace `[RATE]` placeholders on `/pricing/` with approved prices (or keep the page unlinked until then).
 - [ ] Have counsel review `/terms/` and `/privacy/`, then remove the draft notice (`partials/legal-notice.njk` include) and the `noindex: true` front matter on both pages.
