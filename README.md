@@ -55,6 +55,16 @@ The contact form (`/contact/`) and the GhostVerify early-access form (`/products
 
 Without JavaScript the forms post to their own page, so the endpoint should also accept `application/x-www-form-urlencoded` if a no-JS fallback is wanted.
 
+## API test harness
+
+`tools/api-harness/` is a local page for exercising the upstream connectivity APIs behind the products (number lookup, number activation state, mobile identity, CAMARA) with your own API base, key, and phone numbers. It is a developer tool, not part of the site: Eleventy only builds `src/`, so nothing under `tools/` is published.
+
+```bash
+node tools/api-harness/server.mjs   # http://127.0.0.1:8787, callback receiver on :8788
+```
+
+No dependencies beyond Node 18. Runs and received callbacks are appended to `tools/api-harness/data/`, which is git-ignored because it holds API responses for real numbers; the API key is never written to disk. Asynchronous endpoints can deliver their results through a Cloudflare quick tunnel (`brew install cloudflared`, then "Start tunnel" on the page). Details in [tools/api-harness/README.md](tools/api-harness/README.md).
+
 ## Staging mode
 
 The Deploy workflow currently builds with `XGO_STAGING=1`. In that mode the coming-soon page stays at `/`, the real homepage is served at `/new/`, every page carries `noindex, nofollow`, `robots.txt` disallows crawling, and no sitemap is written. All interior pages are live at their final URLs (for example `/products/`), just unlinked from `/`, so anyone with a URL can open them. To preview staging locally:

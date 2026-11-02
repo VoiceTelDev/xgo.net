@@ -1,0 +1,13 @@
+{
+	"name": "xgo-api-harness",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Local test harness for the Infobip Mobile Identity, CAMARA, Number Lookup, and Number Activation State APIs.",
+	"type": "module",
+	"scripts": {
+		"start": "node server.mjs"
+	},
+	"engines": {
+		"node": ">=18"
+	}
+}

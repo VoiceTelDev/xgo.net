@@ -1,0 +1,3 @@
+# Run and callback logs hold API responses for real phone numbers; never commit them.
+data/
+node_modules/
