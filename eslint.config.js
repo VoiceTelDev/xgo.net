@@ -22,7 +22,8 @@ export default [
 		},
 	},
 	{
-		files: ["src/assets/js/**/*.js"],
+		// Browser scripts: the site's own and the API test harness page (tools/api-harness/public).
+		files: ["src/assets/js/**/*.js", "tools/api-harness/public/**/*.js"],
 		languageOptions: {
 			ecmaVersion: 2024,
 			sourceType: "script",

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex, nofollow" />
+		<title>xGO API test harness</title>
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header class="topbar">
+			<div class="topbar__brand">
+				<svg width="34" height="25.5" viewBox="0 -510 680 510" aria-hidden="true">
+					<path
+						fill="#FF5A1F"
+						fill-rule="evenodd"
+						d="M0 0L169.7 0L340 -170.2L510.3 0L680 0L424.9 -255L680 -510L510.3 -510L340 -339.8L169.7 -510L0 -510L255.1 -255Z M340 -339.8L424.9 -255L340 -170.2L255.1 -255Z"
+					/>
+				</svg>
+				<span>xGO API test harness</span>
+			</div>
+			<p class="topbar__note">
+				Local only. Calls go through this machine's proxy on 127.0.0.1, which adds the
+				<code>Authorization: App</code> header.
+			</p>
+			<span class="pill topbar__status" id="proxy-status">checking proxy…</span>
+		</header>
+
+		<main class="layout">
+			<aside class="stack" aria-label="Configuration">
+				<section class="card">
+					<div class="card__head"><h2 class="card__title">Connection</h2></div>
+					<div class="card__body stack">
+						<div class="field">
+							<label class="field__label" for="api-base">API base URL</label>
+							<input
+								class="input input--mono"
+								id="api-base"
+								type="url"
+								placeholder="https://xxxxx.api.infobip.com"
+								autocomplete="off"
+								spellcheck="false"
+							/>
+							<p class="field__hint">
+								Your account's base URL from the Infobip portal. Only infobip.com
+								hosts are forwarded unless the server runs with
+								<code>ALLOW_ANY_HOST=1</code>.
+							</p>
+						</div>
+						<div class="field">
+							<label class="field__label" for="api-key">API key</label>
+							<div class="inline">
+								<input
+									class="input input--mono input--grow"
+									id="api-key"
+									type="password"
+									placeholder="API key"
+									autocomplete="off"
+									spellcheck="false"
+								/>
+								<button class="btn btn--line btn--sm" type="button" id="toggle-key">
+									Show
+								</button>
+							</div>
+							<label class="check"
+								><input type="checkbox" id="remember-key" /> Remember key in this
+								browser (localStorage)</label
+							>
+						</div>
+						<div class="field">
+							<label class="field__label" for="phone">Phone number</label>
+							<input
+								class="input input--mono"
+								id="phone"
+								type="text"
+								inputmode="tel"
+								placeholder="+1 212 555 0123"
+								autocomplete="off"
+							/>
+							<p class="field__hint">
+								International format. Sent as <code id="phone-plain">—</code> to
+								Mobile Identity and Number Lookup, and as
+								<code id="phone-e164">—</code> to CAMARA.
+							</p>
+						</div>
+						<div class="inline">
+							<button class="btn btn--line btn--sm" type="button" id="clear-saved">
+								Forget saved settings
+							</button>
+						</div>
+					</div>
+				</section>
+
+				<section class="card">
+					<div class="card__head">
+						<h2 class="card__title">Async callbacks</h2>
+						<span class="pill" id="tunnel-status">checking…</span>
+					</div>
+					<div class="card__body stack">
+						<p class="field__hint">
+							Asynchronous endpoints post their results to a public URL. The server
+							runs a receiver on <code id="receiver-url">127.0.0.1:8788</code>, and a
+							Cloudflare quick tunnel exposes only that port: the harness page, the
+							logs, and your key stay on this machine.
+						</p>
+						<div class="inline">
+							<button class="btn btn--sm" type="button" id="tunnel-start">
+								Start tunnel
+							</button>
+							<button
+								class="btn btn--line btn--sm"
+								type="button"
+								id="tunnel-stop"
+								hidden
+							>
+								Stop tunnel
+							</button>
+							<a
+								class="btn btn--text"
+								href="https://developers.cloudflare.com/tunnel/get-started/quick-tunnels/"
+								target="_blank"
+								rel="noopener"
+								>about quick tunnels</a
+							>
+						</div>
+						<p class="field__hint" id="tunnel-note" hidden></p>
+						<div class="stack" id="tunnel-url-box" hidden>
+							<div class="field">
+								<p class="field__label">Public URL</p>
+								<div class="inline">
+									<code class="tunnel-url" id="tunnel-url"></code
+									><button class="btn btn--text" type="button" id="tunnel-copy">
+										copy
+									</button>
+								</div>
+							</div>
+							<div class="inline">
+								<button
+									class="btn btn--line btn--sm"
+									type="button"
+									id="use-callback"
+								>
+									Use as callback URL
+								</button>
+								<button class="btn btn--line btn--sm" type="button" id="use-return">
+									Use as return URL
+								</button>
+							</div>
+							<p class="field__hint">
+								Quick tunnel URLs change on every start and are meant for testing. A
+								call that sends a tunnel URL gets a per-call suffix
+								(<code>/cb/&lt;run&gt;/&lt;endpoint&gt;</code>) so the reply is
+								matched to the call that triggered it.
+							</p>
+						</div>
+						<div class="field">
+							<div class="inline">
+								<p class="field__label">Received</p>
+								<span class="field__hint" id="callbacks-count"></span>
+								<button
+									class="btn btn--text inline__end"
+									type="button"
+									id="callbacks-clear"
+									hidden
+								>
+									clear log
+								</button>
+							</div>
+							<ol class="cblist" id="callbacks">
+								<li class="history__empty">Nothing received yet.</li>
+							</ol>
+							<p class="field__hint" id="callbacks-file"></p>
+						</div>
+					</div>
+				</section>
+
+				<section class="card">
+					<div class="card__head">
+						<h2 class="card__title">Run history</h2>
+						<span class="field__hint" id="history-count"></span>
+					</div>
+					<div class="card__body">
+						<ol class="history" id="history">
+							<li class="history__empty">No runs saved yet.</li>
+						</ol>
+						<p class="field__hint" id="history-file"></p>
+					</div>
+				</section>
+			</aside>
+
+			<section class="stack" aria-label="Endpoints and results">
+				<div class="runbar">
+					<button class="btn btn--signal" type="button" id="run">Run selected</button>
+					<button class="btn btn--line" type="button" id="select-core">
+						Select core lookups
+					</button>
+					<button class="btn btn--line" type="button" id="select-ready">
+						Select all runnable
+					</button>
+					<button class="btn btn--line" type="button" id="select-none">Clear</button>
+					<span class="runbar__status" id="run-status">0 selected</span>
+				</div>
+
+				<div class="sets" id="sets"></div>
+
+				<div class="card">
+					<div class="card__head">
+						<div>
+							<h2 class="card__title">Results</h2>
+							<p class="field__hint" id="results-meta">
+								Live results appear here as each call completes.
+							</p>
+						</div>
+						<div class="inline">
+							<button
+								class="btn btn--line btn--sm"
+								type="button"
+								id="copy-summary"
+								disabled
+							>
+								Copy summary
+							</button>
+							<button
+								class="btn btn--line btn--sm"
+								type="button"
+								id="download"
+								disabled
+							>
+								Download JSON
+							</button>
+							<button
+								class="btn btn--line btn--sm"
+								type="button"
+								id="clear-results"
+								disabled
+							>
+								Clear results
+							</button>
+						</div>
+					</div>
+					<div class="card__body">
+						<p class="notice" id="viewing" hidden></p>
+						<div class="results" id="results">
+							<p class="empty">
+								Nothing run yet. Enter the API base, key, and a phone number, tick
+								endpoints, then run.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="catalog.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
